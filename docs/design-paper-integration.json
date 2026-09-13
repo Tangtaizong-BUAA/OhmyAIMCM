@@ -1,7 +1,7 @@
 {
   "date": "2026-09-13",
   "supersedes_readme_hash_in": "readme-verification.json (preserved historical snapshot)",
-  "readme_sha256": "dfac597a052662a48779ac5723d602a0d29fb8ecbc7478e427c418c01418cb27",
+  "readme_sha256": "8d454cb54d09f4144abf1a023ac08567e908fd7efa2b6cc47476fef8906a8aba",
   "design_paper_sha256": "6c8393ee300d8e656452fce65777a26879bc841c48029f8e0774ce15387d4d19",
   "local_links_checked": 29,
   "broken_links": [],
@@ -12,5 +12,13 @@
     "Tangtaizong-BUAA",
     "1923870998-create"
   ],
-  "contributor_listing_sha256": "350323627423ee0209f91c708e664f193669524cf5789365249b19f29f9493d1"
+  "contributor_listing_sha256": "350323627423ee0209f91c708e664f193669524cf5789365249b19f29f9493d1",
+  "readme_revision": {
+    "date": "2026-09-13",
+    "scope": "Formal CUMCM paper Skill description; prose only, commands and link targets retained",
+    "code_blocks_unchanged": true,
+    "inline_code_unchanged": true,
+    "link_targets_unchanged": true,
+    "readme_links_checked": 24
+  }
 }
