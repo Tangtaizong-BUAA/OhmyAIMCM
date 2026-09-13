@@ -1,18 +1,16 @@
 # OhmyAIMCM：全国大学生数学建模竞赛论文 Skill
 
-OhmyAIMCM 是面向全国大学生数学建模竞赛（国赛）论文建模、撰写与排版的 Agent Skill。项目将期刊论文的版式分析与获奖国赛论文的论证经验转化为结构化资源，并与读题、建模、计算、科学绘图、写作和审查模块结合。项目现名为 `OhmyAIMCM`，原名为 `lab-ultra-unified`；当前发行资源的调用入口仍为 `$lab-ultra`。
+OhmyAIMCM 是面向全国大学生数学建模竞赛（国赛）论文建模、撰写与排版的 Agent Skill。项目将期刊论文的版式分析与获奖国赛论文的论证经验转化为结构化资源，并与读题、建模、计算、科学绘图、写作和审查模块结合。项目与调用入口统一命名为 `OhmyAIMCM`，主入口为 `$OhmyAIMCM`，子模块使用 `OhmyAIMCM-*`。
 
 本项目针对国赛论文中的模型推导跳步、符号含义不清、结果解释不足及图文排版不一致等问题，组织从题目条件、模型假设和计算证据到正文论证的工作流程，并检查论文内容与图表、引用及版面之间的一致性。
 
 当前统一版包含 20 个模块、68 个通用写作技巧和 145 个条件细分。本仓库提供蒸馏方法说明、运行时资源、系统设计论文，以及附完整源码的药材烘干论文案例。
 
-[设计论文](docs/design-paper/Lab-ultra-unified-整体设计论文.pdf) · [论文案例](#生成案例药材烘干论文) · [蒸馏方法](#这些经验是怎么蒸出来的) · [安装使用](#装进你的-agent) · [技术细节与证据](docs/distillation.md)
+[设计论文](docs/design-paper/OhmyAIMCM-整体设计论文.pdf) · [论文案例](#生成案例药材烘干论文) · [蒸馏方法](#这些经验是怎么蒸出来的) · [安装使用](#装进你的-agent) · [技术细节与证据](docs/distillation.md)
 
 ## 系统设计论文
 
-随附设计论文使用修订时的项目名称 Lab-ultra-unified，所述系统对应当前 OhmyAIMCM 项目。
-
-[Lab-ultra-unified 整体设计论文](docs/design-paper/Lab-ultra-unified-整体设计论文.pdf)共 21 页，详细说明内容蒸馏中的连续分块、引文校验与条件技巧归并，以及版式统计、运行时检索和证据更新机制。文中包含技术栈、数据结构、验证范围及药材论文的图表与结果分析。
+[OhmyAIMCM 整体设计论文](docs/design-paper/OhmyAIMCM-整体设计论文.pdf)共 21 页，详细说明内容蒸馏中的连续分块、引文校验与条件技巧归并，以及版式统计、运行时检索和证据更新机制。文中包含技术栈、数据结构、验证范围及药材论文的图表与结果分析。
 
 [论文与编译源码](docs/design-paper/README.md) · [版本修订说明](docs/design-paper/REVISION.md)
 
@@ -56,8 +54,8 @@ flowchart TD
     D --> H[带原文定位的候选经验]
     H --> I[复核、归并、保留条件与反例]
     I --> J[68 个通用技巧与 145 个条件细分]
-    G --> K[Lab-ultra 排版模块]
-    J --> L[Lab-ultra 写作模块]
+    G --> K[OhmyAIMCM 排版模块]
+    J --> L[OhmyAIMCM 写作模块]
     K --> M[论文、可编辑文件与核查记录]
     L --> M
 ```
@@ -72,7 +70,7 @@ flowchart TD
 
 国赛布局校准使用 64 篇获奖展示稿和 752 个期刊语料身份。在该轮离线分析中，两组总权重分别设为 0.60 和 0.40，组内按篇等权；代表版式采用实际观测样本中的 medoid，即与同组样本总体距离较小的代表样本。权重 0.60 为面向国赛任务的设计选择，相关记录包含权重敏感性与留出检查。
 
-排版器使用的控制项由有限的 `Style Tokens` 表示，并受可读性与排版规则约束。当前默认样式为作者选定的 `journal-dense-cn-v1`。752 个期刊身份中，来源核验达到 `publisher-final` 的锚点为 21 个；后续 v2.1 研究尚无可导出的新共识因子。默认样式的来源和适用限制见[版式策略说明](skills/lab-ultra-typesetter/references/aesthetic-policy.md)。
+排版器使用的控制项由有限的 `Style Tokens` 表示，并受可读性与排版规则约束。当前默认样式为作者选定的 `journal-dense-cn-v1`。752 个期刊身份中，来源核验达到 `publisher-final` 的锚点为 21 个；后续 v2.1 研究尚无可导出的新共识因子。默认样式的来源和适用限制见[版式策略说明](skills/OhmyAIMCM-typesetter/references/aesthetic-policy.md)。
 
 ### 内容蒸馏：论证动作提取与条件规则归并
 
@@ -106,7 +104,7 @@ flowchart TD
 | 运行时模块 | 20 个 | 1 个主入口和 19 个同套子模块 |
 | Skill 资源 | 265 个文件 | 由发行版 manifest 逐文件记录 |
 
-可直接查看[通用技巧数据](skills/lab-ultra-writing/references/exposition-cards.json)、[条件细分与来源记录](skills/lab-ultra-writing/references/technique-variants.json)和[归并统计](docs/consolidation-summary.json)。
+可直接查看[通用技巧数据](skills/OhmyAIMCM-writing/references/exposition-cards.json)、[条件细分与来源记录](skills/OhmyAIMCM-writing/references/technique-variants.json)和[归并统计](docs/consolidation-summary.json)。
 
 1,585 份分析对应已转换的文本批次。原始资料库中的未转换文件、未解码归档内容及未转录媒体不计入完成量。68 个通用技巧为资源归并结果，其数量不代表已经验证的论文质量改进方法数量。
 
@@ -119,16 +117,16 @@ flowchart TD
 下载本仓库并进入根目录。以下命令使用项目安装记录中的用户级 Skill 路径；使用其他客户端时，应将目标路径替换为对应的 Skill 目录。
 
 ```bash
-python3 -B install_lab.py install --bundle . --dest "$HOME/.agents/skills"
-python3 -B install_lab.py verify --bundle . --dest "$HOME/.agents/skills"
+python3 -B install.py install --bundle . --dest "$HOME/.agents/skills"
+python3 -B install.py verify --bundle . --dest "$HOME/.agents/skills"
 ```
 
-安装器完整安装 20 个模块，并拒绝合并覆盖已有同名目录。更新前应备份现有的整套 `lab-ultra` 和 `lab-ultra-*`。主入口依赖同套子模块，安装时需保留完整模块集合。
+安装器完整安装 20 个模块，并拒绝合并覆盖已有同名目录。更新前应备份现有的整套 `OhmyAIMCM` 和 `OhmyAIMCM-*`。主入口依赖同套子模块，安装时需保留完整模块集合。
 
 客户端加载 Skill 后，可使用以下任务指令：
 
 ```text
-$lab-ultra
+$OhmyAIMCM
 
 请先读题面和附件，说明每问的输入、输出和数据缺口。
 从物理对象、变量与守恒关系推导模型，再实现计算。
@@ -138,7 +136,7 @@ $lab-ultra
 对于已有模型与计算结果的任务，可单独调用写作模块：
 
 ```text
-$lab-ultra-writing
+$OhmyAIMCM-writing
 
 模型和数值已定，请保留已有结论。
 帮我检查方法部分哪些推导跳步、哪些符号缺少现实含义，
@@ -148,9 +146,9 @@ $lab-ultra-writing
 条件规则支持通过本地命令查询：
 
 ```bash
-python3 skills/lab-ultra-writing/scripts/query_variants.py query 搜索 --limit 3
-python3 skills/lab-ultra-writing/scripts/query_variants.py show variant-0039
-python3 skills/lab-ultra-writing/scripts/query_variants.py health
+python3 skills/OhmyAIMCM-writing/scripts/query_variants.py query 搜索 --limit 3
+python3 skills/OhmyAIMCM-writing/scripts/query_variants.py show variant-0039
+python3 skills/OhmyAIMCM-writing/scripts/query_variants.py health
 ```
 
 查询器采用字面匹配，无需联网或访问原始论文库。Agent 根据当前任务判断检索结果的适用性；未检索到合适规则时，依据任务材料组织论述。
@@ -174,17 +172,17 @@ python3 skills/lab-ultra-writing/scripts/query_variants.py health
 
 ## 模块结构与协作流程
 
-`lab-ultra` 根据任务范围协调同套子模块。局部写作任务按指定段落处理；完整国赛论文任务按需要组织读题、建模、计算、写作、审查及交付。
+`OhmyAIMCM` 根据任务范围协调同套子模块。局部写作任务按指定段落处理；完整国赛论文任务按需要组织读题、建模、计算、写作、审查及交付。
 
 | 工作 | 模块 |
 | --- | --- |
-| 读题与建模 | `lab-ultra-intake`、`lab-ultra-modeling` |
-| 计算与审查 | `lab-ultra-compute`、`lab-ultra-review` |
-| 参考与文献 | `lab-ultra-references`、`lab-ultra-sciverse` |
-| 写作与排版 | `lab-ultra-writing`、`lab-ultra-typesetter` |
-| 图表统筹 | `lab-ultra-scientific-figure-maker`、`lab-ultra-scientific-visualization` |
-| 数据图与图例 | `lab-ultra-academic-plotting`、`lab-ultra-scipilot-figure-skill`、`lab-ultra-agent-figure-gallery`、`lab-ultra-generate-plot`、`lab-ultra-figure-generation` |
-| 结构与关系图 | `lab-ultra-figure-spec`、`lab-ultra-generate-diagram`、`lab-ultra-evaluate-diagram`、`lab-ultra-draw-io` |
+| 读题与建模 | `OhmyAIMCM-intake`、`OhmyAIMCM-modeling` |
+| 计算与审查 | `OhmyAIMCM-compute`、`OhmyAIMCM-review` |
+| 参考与文献 | `OhmyAIMCM-references`、`OhmyAIMCM-sciverse` |
+| 写作与排版 | `OhmyAIMCM-writing`、`OhmyAIMCM-typesetter` |
+| 图表统筹 | `OhmyAIMCM-scientific-figure-maker`、`OhmyAIMCM-scientific-visualization` |
+| 数据图与图例 | `OhmyAIMCM-academic-plotting`、`OhmyAIMCM-scipilot-figure-skill`、`OhmyAIMCM-agent-figure-gallery`、`OhmyAIMCM-generate-plot`、`OhmyAIMCM-figure-generation` |
+| 结构与关系图 | `OhmyAIMCM-figure-spec`、`OhmyAIMCM-generate-diagram`、`OhmyAIMCM-evaluate-diagram`、`OhmyAIMCM-draw-io` |
 
 排版模块以已完成的正文为输入，保留原有内容，检查编号、交叉引用、图像缺失、页面溢出及编译结果，输出 LaTeX、PDF 和审计文件。模型推导、计算结论及图表解释的正确性由相应的内容审查环节核验。
 

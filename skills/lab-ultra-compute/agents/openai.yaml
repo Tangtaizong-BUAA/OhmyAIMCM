@@ -1,4 +1,0 @@
-interface:
-  display_name: "[Lab-ultra] cumcm-compute"
-  short_description: "Run scoped computations and preserve executable evidence."
-  default_prompt: "Use $lab-ultra-compute to run a bounded, reproducible experiment for this modeling question."

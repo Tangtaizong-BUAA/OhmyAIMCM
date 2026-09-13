@@ -1,0 +1,411 @@
+{
+  "schema_version": 1,
+  "purpose": "Prescreened knowledge references, not a method-selection table",
+  "entries": [
+    {
+      "id": "sklearn-data-leakage",
+      "domain": "validation",
+      "title": "scikit-learn: Common pitfalls and recommended practices",
+      "summary": "预处理、标准化、特征筛选与测试集泄漏；训练和预测数据流的边界。",
+      "keywords": [
+        "数据泄漏",
+        "预处理",
+        "标准化",
+        "特征筛选",
+        "pipeline",
+        "fit",
+        "transform"
+      ],
+      "limits": "已审预处理和泄漏章节；随机性章节未逐段复核。Pipeline 不自动修复错误划分。源文件含未缓存图片和交叉引用，示例未执行。",
+      "url": "https://scikit-learn.org/stable/common_pitfalls.html",
+      "version": "scikit-learn commit 9bafc1c9cab99aa036aba8207125637c39fd22db, doc/common_pitfalls.rst",
+      "screened_on": "2026-09-05",
+      "screening": "selected sections read; full raw source cached",
+      "rights": "BSD-3-Clause; unmodified source and COPYING retained",
+      "path": "OhmyAIMCM-references/assets/sklearn/common_pitfalls.rst",
+      "sha256": "6e2b42374fbb521c35f29eeab05bcbfa9744eed344b5f92e41013338ff60a2f5",
+      "license_path": "OhmyAIMCM-references/assets/sklearn/COPYING",
+      "license_sha256": "50d6a9d340f19ab355609917993114daf5f47e3161067bcf34955bbd05cd9cb0"
+    },
+    {
+      "id": "sklearn-cross-validation",
+      "domain": "validation",
+      "title": "scikit-learn: Cross-validation: evaluating estimator performance",
+      "summary": "重复主体、设备分组、时间依赖与分层验证的含义；验证对象和独立单位。",
+      "keywords": [
+        "重复设备",
+        "重复测量",
+        "分组验证",
+        "独立样本",
+        "时间序列",
+        "GroupKFold",
+        "TimeSeriesSplit",
+        "stratification"
+      ],
+      "limits": "已审分层、分组、时间相关章节，非全篇逐段验收；按泛化对象选择划分，分层后折间波动不等于完整不确定性。图片未镜像，示例未执行。",
+      "url": "https://scikit-learn.org/stable/modules/cross_validation.html",
+      "version": "scikit-learn commit 9bafc1c9cab99aa036aba8207125637c39fd22db, doc/modules/cross_validation.rst",
+      "screened_on": "2026-09-05",
+      "screening": "selected sections read; full raw source cached",
+      "rights": "BSD-3-Clause; unmodified source and COPYING retained",
+      "path": "OhmyAIMCM-references/assets/sklearn/cross_validation.rst",
+      "sha256": "06f22c6b86b0aa6dc18195b89b9c51295f6f2e5a78007af55b8c649c6dc091f5",
+      "license_path": "OhmyAIMCM-references/assets/sklearn/COPYING",
+      "license_sha256": "50d6a9d340f19ab355609917993114daf5f47e3161067bcf34955bbd05cd9cb0"
+    },
+    {
+      "id": "scipy-constrained-termination",
+      "domain": "compute",
+      "title": "SciPy: minimize(method='trust-constr')",
+      "summary": "约束违背、拉格朗日梯度、gtol、xtol 和停止状态的数值含义。",
+      "keywords": [
+        "约束优化",
+        "停止条件",
+        "可行性",
+        "最优性",
+        "gtol",
+        "xtol",
+        "trust-constr"
+      ],
+      "limits": "方法特定的数值接口；收敛或停止不是全局最优证明。按实际安装版本复核。",
+      "url": "https://docs.scipy.org/doc/scipy/reference/optimize.minimize-trustconstr.html",
+      "version": "live documentation checked 2026-09-05; link not immutable",
+      "screened_on": "2026-09-05",
+      "screening": "parameters, returns and status sections read by research agent",
+      "rights": "Project BSD-3 confirmed; no page content redistributed"
+    },
+    {
+      "id": "scipy-ivp-diagnostics",
+      "domain": "compute",
+      "title": "SciPy: solve_ivp",
+      "summary": "常微分方程初值积分的容差、尺度、事件漏检、Jacobian 和失败状态。",
+      "keywords": [
+        "微分方程",
+        "初值",
+        "积分失败",
+        "事件",
+        "容差",
+        "刚性",
+        "solve_ivp",
+        "rtol",
+        "atol"
+      ],
+      "limits": "局部误差控制不等于全局误差保证；本条不按题型指定积分方法。",
+      "url": "https://docs.scipy.org/doc/scipy/reference/generated/scipy.integrate.solve_ivp.html",
+      "version": "live documentation checked 2026-09-05; link not immutable",
+      "screened_on": "2026-09-05",
+      "screening": "methods, events, tolerance, Jacobian and statuses read by research agent",
+      "rights": "Project BSD-3 confirmed; no page content redistributed"
+    },
+    {
+      "id": "cvxpy-dcp",
+      "domain": "method",
+      "title": "CVXPY: Disciplined Convex Programming",
+      "summary": "表达式的符号、曲率、单调性和组合规则；为何凸表达式也可能无法被 DCP 识别。",
+      "keywords": [
+        "凸性",
+        "凸优化",
+        "曲率",
+        "符号",
+        "DCP",
+        "unknown",
+        "单调性"
+      ],
+      "limits": "DCP 是充分的可验证规则；未通过不能直接断定数学上非凸。不能反过来证明实际模型正确。",
+      "url": "https://www.cvxpy.org/tutorial/dcp/index.html",
+      "version": "live documentation checked 2026-09-05; link not immutable",
+      "screened_on": "2026-09-05",
+      "screening": "Sign, Curvature, composition and operators read by research agent",
+      "rights": "Project Apache-2.0 confirmed; page-specific notices not fully checked; link only"
+    },
+    {
+      "id": "cvxpy-status",
+      "domain": "compute",
+      "title": "CVXPY: What is CVXPY? — problem statuses",
+      "summary": "不可行、无界、精度不足和求解异常的状态解释。",
+      "keywords": [
+        "不可行",
+        "无界",
+        "求解状态",
+        "精度不足",
+        "optimal_inaccurate",
+        "SolverError"
+      ],
+      "limits": "读取状态不等于独立验证可行性或最优性；需要实际模型和数值诊断。",
+      "url": "https://www.cvxpy.org/tutorial/intro/index.html#other-problem-statuses",
+      "version": "live documentation checked 2026-09-05; link not immutable",
+      "screened_on": "2026-09-05",
+      "screening": "infeasible/unbounded and other status sections read by research agent",
+      "rights": "Project Apache-2.0 confirmed; page-specific notices not fully checked; link only"
+    },
+    {
+      "id": "nist-normal-errors",
+      "domain": "method",
+      "title": "NIST e-Handbook 4.2.1.4: The random errors follow a normal distribution",
+      "summary": "过程建模中正态误差假设与估计、区间推断之间的关系。",
+      "keywords": [
+        "正态误差",
+        "最小二乘",
+        "统计假设",
+        "置信区间",
+        "normal errors"
+      ],
+      "limits": "不能概括成所有最小二乘都必须正态；具体推断需要核对其余假设。",
+      "url": "https://www.itl.nist.gov/div898/handbook/pmd/section2/pmd214.htm",
+      "version": "live handbook section checked 2026-09-05",
+      "screened_on": "2026-09-05",
+      "screening": "section and assumptions overview read by research agent",
+      "rights": "NIST/SEMATECH page ownership exceptions not fully resolved; link only"
+    },
+    {
+      "id": "nist-quantity-values",
+      "domain": "writing",
+      "title": "NIST SP 811 Chapter 7: Expressing Values of Quantities",
+      "summary": "量、数值和单位的区别；图表单位、对数自变量、量方程与数值方程。",
+      "keywords": [
+        "单位",
+        "量纲",
+        "量方程",
+        "数值方程",
+        "对数",
+        "符号体系",
+        "SI"
+      ],
+      "limits": "量值表达规范不是中文国赛模板；不能据排印正确推断模型正确。",
+      "url": "https://www.nist.gov/pml/special-publication-811/nist-guide-si-chapter-7-rules-and-style-conventions-expressing-values",
+      "version": "SP 811 chapter 7, online page checked 2026-09-05",
+      "screened_on": "2026-09-05",
+      "screening": "relevant text in 7.1–7.11 read by research agent",
+      "rights": "NIST technical-series reuse policy checked; link only, no page mirrored"
+    },
+    {
+      "id": "plos-paper-structure",
+      "domain": "writing",
+      "title": "Mensh and Kording: Ten simple rules for structuring papers",
+      "summary": "面向读者的科学论文组织、论证主次与术语一致性。",
+      "keywords": [
+        "论文结构",
+        "论证层次",
+        "读者",
+        "摘要",
+        "scientific writing"
+      ],
+      "limits": "组织启发式不是固定段落法则；不强制每篇只有一个贡献。",
+      "url": "https://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1005619",
+      "version": "2017 article, corrected online version checked 2026-09-05",
+      "screened_on": "2026-09-05",
+      "screening": "guidance and discussion read during expression-v3 research",
+      "rights": "CC BY article; link only, no article prose copied into catalogue"
+    },
+    {
+      "id": "nature-scitable-writing",
+      "domain": "writing",
+      "title": "Nature Scitable: Scientific Papers",
+      "summary": "方法、结果讨论、结论与摘要的阅读职责，解释研究选择与发现。",
+      "keywords": [
+        "论文技巧",
+        "结果讨论",
+        "结论",
+        "摘要",
+        "Nature",
+        "写作"
+      ],
+      "limits": "归档教学资料，不是当前 Nature 投稿规范；信息顺序由读者需要决定。",
+      "url": "https://www.nature.com/scitable/topicpage/scientific-papers-13815490/",
+      "version": "archived educational guide checked 2026-09-05",
+      "screened_on": "2026-09-05",
+      "screening": "body, methods, results/discussion, conclusion and abstract read during expression-v3 research",
+      "rights": "Link only; no redistributed article prose"
+    },
+    {
+      "id": "local-argument",
+      "domain": "writing",
+      "title": "CUMCM: 论证技巧导航",
+      "summary": "按比较口径、证据强度、机制解释和不利结果，定位统一写作技巧；本页仅保留导航。",
+      "keywords": [
+        "论证",
+        "结果解读",
+        "机制",
+        "不利证据",
+        "显著性",
+        "最优性"
+      ],
+      "limits": "根据实际表达缺口和证据选择；材料中的科学结论与自动候选未因整理而获得认证。",
+      "version": "writing analysis unification 20260910",
+      "screened_on": "2026-09-10",
+      "screening": "Conditional integration with retained source provenance, conflict decisions and bounded forward writing checks; not a controlled effectiveness estimate",
+      "rights": "Local project material; no new redistribution license asserted",
+      "path": "OhmyAIMCM-writing/references/argument-and-explanation.md",
+      "sha256": "810fa5820277b8e1105b9b01c24915736073db7a61616aae1a155cbe4d0e263f"
+    },
+    {
+      "id": "local-reader-architecture",
+      "domain": "writing",
+      "title": "CUMCM: 读者与结构技巧导航",
+      "summary": "按读者问题、论证依赖和摘要压缩需要，定位统一写作技巧；不规定固定段落数。",
+      "keywords": [
+        "论文层次",
+        "段落",
+        "摘要",
+        "表意",
+        "读者",
+        "高级写作"
+      ],
+      "limits": "根据实际表达缺口和证据选择；材料中的科学结论与自动候选未因整理而获得认证。",
+      "version": "writing analysis unification 20260910",
+      "screened_on": "2026-09-10",
+      "screening": "Conditional integration with retained source provenance, conflict decisions and bounded forward writing checks; not a controlled effectiveness estimate",
+      "rights": "Local project material; no new redistribution license asserted",
+      "path": "OhmyAIMCM-writing/references/reader-architecture.md",
+      "sha256": "4d3e9c8374cab8f328dc70f7a94a860059e236cdbdab43e81bc44efd6529adfe"
+    },
+    {
+      "id": "local-notation",
+      "domain": "writing",
+      "title": "CUMCM: Paper conventions and preflight",
+      "summary": "符号含义、层级索引、单位与尺度、公式说明和稳定交叉引用。",
+      "keywords": [
+        "符号体系",
+        "单位",
+        "量纲",
+        "索引",
+        "公式",
+        "交叉引用"
+      ],
+      "limits": "机械检查只覆盖部分语法；语义一致性需实际审查。",
+      "version": "paper audit repair 20260908: arguments, events and references",
+      "screened_on": "2026-09-08",
+      "screening": "project-authored and reviewed guidance",
+      "rights": "Local project material; no new redistribution license asserted",
+      "path": "OhmyAIMCM-writing/references/paper-conventions.md",
+      "sha256": "0cc9894f32e23f65ca7fae4f13817d5dca98da5bb7f57399caaebfee40a3289d"
+    },
+    {
+      "id": "local-expression-review",
+      "domain": "writing",
+      "title": "CUMCM: Evidence-based expression review",
+      "summary": "表意、推理、层次、数学、符号、证据呈现、压缩归因和精确经济的定位审阅。",
+      "keywords": [
+        "写作审阅",
+        "八维",
+        "论文质量",
+        "版本绑定",
+        "AI审阅"
+      ],
+      "limits": "AI 语义审阅不是真人验收或顶刊质量认证。",
+      "version": "paper audit repair 20260908: diagnostic coverage and comparison conditions",
+      "screened_on": "2026-09-08",
+      "screening": "project-authored and reviewed guidance",
+      "rights": "Local project material; no new redistribution license asserted",
+      "path": "OhmyAIMCM-writing/references/expression-review.md",
+      "sha256": "7db677e0cdc4f5a78715c91d21a9d5f9e9ab1261ea5c5c4a288de32d29484de4"
+    },
+    {
+      "id": "local-validation",
+      "domain": "validation",
+      "title": "CUMCM: Choose tests from the claim",
+      "summary": "按主张确定需要挑战的假设、可行性、预测对象或敏感性，而非查表选模型。",
+      "keywords": [
+        "验证",
+        "可行性",
+        "稳健性",
+        "独立样本",
+        "敏感性",
+        "证明"
+      ],
+      "limits": "失败问题清单不是强制实验配额，不要求纯证明做统计试验。",
+      "version": "award exposition source-review v1",
+      "screened_on": "2026-09-06",
+      "screening": "project-authored and reviewed guidance",
+      "rights": "Local project material; no new redistribution license asserted",
+      "path": "OhmyAIMCM-modeling/references/validation-questions.md",
+      "sha256": "ea342eb217e8310a4cdab562aaf2bcf3bb4ce9250c9313e427e683c7eab99671"
+    },
+    {
+      "id": "local-run-evidence",
+      "domain": "compute",
+      "title": "CUMCM: Executed-result records",
+      "summary": "代码、输入、输出、日志及运行版本的真实绑定和失效条件。",
+      "keywords": [
+        "复现",
+        "执行证据",
+        "运行记录",
+        "哈希",
+        "来源",
+        "run_record"
+      ],
+      "limits": "运行回执不证明数值或科学正确性，也不是完整安全沙箱。",
+      "version": "project reference preserved from 60ddeb2",
+      "screened_on": "2026-09-05",
+      "screening": "project-authored and reviewed guidance",
+      "rights": "Local project material; no new redistribution license asserted",
+      "path": "OhmyAIMCM-compute/references/run-evidence.md",
+      "sha256": "ff84fa203f53f2e603e7a159ccd8d8e1a4fcd38359d8247395067055c2ec6418"
+    },
+    {
+      "id": "local-scientific-diagrams",
+      "domain": "figures",
+      "title": "CUMCM: Scientific diagrams, not presentation cards",
+      "summary": "科研流程图与机制图的实体、依赖、几何语义和实际尺寸复核。",
+      "keywords": [
+        "流程图",
+        "机制图",
+        "科研图",
+        "几何",
+        "可编辑",
+        "TikZ",
+        "SVG"
+      ],
+      "limits": "本项目视觉偏好不等于所有期刊的强制风格，图意仍需对照真实模型。",
+      "version": "Pro typography repair 20260909; image-assisted route preserved",
+      "screened_on": "2026-09-09",
+      "screening": "project-authored and reviewed guidance",
+      "rights": "Local project material; no new redistribution license asserted",
+      "path": "OhmyAIMCM-scientific-figure-maker/references/diagram-design.md",
+      "sha256": "1f8a9e630ee2c2053f3c21c16663ec7bda4cd9aae6b0b7c49ce3200cbc5fac7d"
+    },
+    {
+      "id": "local-writing-playbook",
+      "domain": "writing",
+      "title": "CUMCM: 统一条件写作技巧",
+      "summary": "42 条按表达缺口选择的写作技巧，覆盖读者、论证、数学解释、结果边界、图文分工、来源与修订。",
+      "keywords": [
+        "写作",
+        "正文",
+        "解释",
+        "层次",
+        "图文",
+        "整合"
+      ],
+      "limits": "根据实际表达缺口和证据选择；材料中的科学结论与自动候选未因整理而获得认证。",
+      "version": "writing analysis unification 20260910",
+      "screened_on": "2026-09-10",
+      "screening": "Conditional integration with retained source provenance, conflict decisions and bounded forward writing checks; not a controlled effectiveness estimate",
+      "rights": "Original project guidance; no source-paper prose bundled",
+      "path": "OhmyAIMCM-writing/references/writing-techniques.md",
+      "sha256": "4d1919e8cc8164fc0791da0ed3febdc7d994bb37584f0306aea907cd059fcf7b"
+    },
+    {
+      "id": "local-exposition-library",
+      "domain": "writing",
+      "title": "CUMCM: 可追溯的条件写作技巧检索",
+      "summary": "统一检索 42 条条件技巧：保留 34 条历史卡，融合经核读的材料分析并新增 8 条；分析候选不自动升级为指导。",
+      "keywords": [
+        "内容蒸馏",
+        "示意图",
+        "解释",
+        "前向",
+        "逆问题",
+        "读者",
+        "表达技巧"
+      ],
+      "limits": "根据实际表达缺口和证据选择；材料中的科学结论与自动候选未因整理而获得认证。",
+      "version": "writing analysis unification 20260910",
+      "screened_on": "2026-09-10",
+      "screening": "Conditional integration with retained source provenance, conflict decisions and bounded forward writing checks; not a controlled effectiveness estimate",
+      "rights": "Original project guidance; no source-paper text or artwork bundled",
+      "path": "OhmyAIMCM-writing/references/exposition-library.md",
+      "sha256": "f4e1706b745ccb8570be25c641e039dfadc999d70dafdd28b592a51f3c25c3ab"
+    }
+  ]
+}

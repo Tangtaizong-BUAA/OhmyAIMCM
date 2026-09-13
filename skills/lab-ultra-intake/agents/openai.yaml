@@ -1,4 +1,0 @@
-interface:
-  display_name: "[Lab-ultra] cumcm-intake"
-  short_description: "Inspect CUMCM obligations, attachments and data meaning."
-  default_prompt: "Use $lab-ultra-intake to inspect this problem packet and identify its required answers, data semantics and gaps."

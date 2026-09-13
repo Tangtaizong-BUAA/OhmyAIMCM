@@ -1,4 +1,0 @@
-interface:
-  display_name: "[Lab-ultra] cumcm-modeling"
-  short_description: "Develop and challenge models without a method quota."
-  default_prompt: "Use $lab-ultra-modeling to formulate this subproblem and choose the most informative way to test the approach."

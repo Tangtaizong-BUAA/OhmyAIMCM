@@ -1,0 +1,4 @@
+interface:
+  display_name: "OhmyAIMCM-intake"
+  short_description: "Inspect CUMCM obligations, attachments and data meaning."
+  default_prompt: "Use $OhmyAIMCM-intake to inspect this problem packet and identify its required answers, data semantics and gaps."

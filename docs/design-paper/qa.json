@@ -1,77 +1,51 @@
 {
+  "project": "OhmyAIMCM",
   "date": "2026-09-13",
-  "scope": "Technical design manuscript revision, local source binding, compilation, visual page review and runtime resource/query checks",
-  "writing_skill": "humanizer; facts preserved and prose reviewed in file mode",
-  "base_release": "lab-ultra-unified-20260910-r2",
-  "pages": 21,
-  "chinese_character_count_in_tex": 15144,
-  "figures": 4,
-  "numbered_tables": 5,
-  "source_index_longtables": 1,
-  "bibliography_entries": 21,
-  "undefined_labels": [],
-  "undefined_citations": [],
-  "compile": {
-    "engine": "XeLaTeX / TeX Live 2025",
-    "exit_code": 0,
-    "diagnostics": []
+  "scope": "Complete runtime namespace migration and design-paper recompilation; original research data and supplied case preserved",
+  "historical_audit_url": "https://github.com/Tangtaizong-BUAA/OhmyAIMCM/blob/0a34c50e19d446f9fbdb843423c374c05dec3b00/docs/design-paper/qa.json",
+  "historical_audit_commit": "0a34c50e19d446f9fbdb843423c374c05dec3b00",
+  "source_record_hashes": {
+    "docs/architecture.md": "19fd783c1702b678b6e347913062fae6c0d834a6f1c084c9020aa920a3bafe26",
+    "layout-lab/pyproject.toml": "fdf96dd9145c6dea29d6a0fd59fac6fa68130df439f479a9d91ec4d1e5f0dde0",
+    "experiments/cumcm-suite-2026-09-05/audits/award-full-distillation-v2-20260906.md": "7fb11825c8fdd20c883dd29c25ad1f505a7021dc2f320b2b065742dd90e9d29f",
+    "experiments/writing-corpus-20260909/full-distillation/README.md": "959f338ed727a69d7e0d2b189fe9bd4bfc04891fd3b549cbc4e2e37644045f78",
+    "experiments/writing-corpus-20260909/full-distillation/api_distill.py": "765f3305716a7ba1ba20a5eb57f2c7cb7395104e8a5c2e10b2cc4834300d0816",
+    "experiments/writing-corpus-20260909/skill-unification-002/README.md": "765ddcb3f370da17295afa6178b5f916b786bd2f9fa15940c39b52239b7548b5",
+    "experiments/writing-corpus-20260909/skill-unification-002/consolidation-summary.json": "f9611360ec7cbfcc9216de7b9e9535ebe6e4678f2c5bfe1aaca3b7f4b2c3341c",
+    "experiments/writing-corpus-20260909/skill-unification-002/bundle-check.json": "e5fbb48c2edc70b671da7a29c1571e757c0ddcc0ab75e2b0c1072baad608922b",
+    "experiments/writing-corpus-20260909/skill-unification-002/installed-check.json": "85291d6b3e141d5cc19f8d1a8a5be1bcada95d1e08cc04e396126ebd6ab3e2d0",
+    "experiments/writing-corpus-20260909/skill-unification-002/forward-validation.md": "69c874d4707c3b5af789b9fd4b4c01d52d6af6d9b8c990be6a01fc3d2fcb9027",
+    "experiments/cumcm-suite-2026-09-05/audits/native-collaboration-v2-20260907.md": "7dfcc425aa36be99a56288a8a2f4486697d12943df56169bd25ee057c617ddde",
+    "experiments/cumcm-suite-2026-09-05/audits/physical-scenes-and-diagram-style-20260907.md": "0cbb9b3bb878eaf7d66fddf2ae8571b206ac3e52e256d05f77a228164f914cae",
+    "experiments/cumcm-suite-2026-09-05/audits/danus-integration-v1-2026-09-05.md": "114ad73256b246a889f8d7fa3205e77620c4f37b05d9240a41ae251cfa65b49a",
+    "experiments/cumcm-suite-2026-09-05/distillation/v3/writing-transfer/outcome.md": "6ad31c212c1d7af3235d790a88d75fa6c7a76de30e139e7f4965d9ca775ab9aa"
   },
-  "visual_review": {
-    "pages": [
-      1,
-      2,
-      3,
-      4,
-      5,
-      6,
-      7,
-      8,
-      9,
-      10,
-      11,
-      12,
-      13,
-      14,
-      15,
-      16,
-      17,
-      18,
-      19,
-      20,
-      21
-    ],
-    "render_long_edge_px": 1200,
-    "method": "Every page inspected; after shortening section 6 title only page 8 raster changed and was inspected again. Other 20 final page raster hashes identical to already inspected versions.",
-    "words_outside_page": [],
-    "page_raster_sha256": {
-      "review-01.png": "de1f18d5e01175b8f5542fd1ace5ce22981910c1c52ac90d7afa6cc49a555360",
-      "review-02.png": "a4bfc981dba73764a58096d945763d2759d2e8165e7ff26c42f450e233bc110b",
-      "review-03.png": "e5fea45431ed843ab23496bf7df651419a75d190ed6356426c0940b360768a52",
-      "review-04.png": "2cc9c345129b59f306cf6226b3a2b197036c428f32939f12f54a1ee05e23d83b",
-      "review-05.png": "d8ef35d9949ee00e94aa5d6402567e4f70b30410f53a353832a267c7484af0e3",
-      "review-06.png": "7fb4e447e80914772054712e7dbdc811ffa5876ca7e331ad2704d5549ac23182",
-      "review-07.png": "8cded14795f8aa5641cb1e4448a2b7bbe38471603895681f2e27192807104943",
-      "review-08.png": "aee2fdefb189ef03279cd6dd27d4b51a2e18c88b95582faa00d4af03912062e2",
-      "review-09.png": "c2df6e9ae99d83e36b4522c31c3d2d28f57fca588f51d4bf20282bf1bdbd615b",
-      "review-10.png": "dfe9366ff72c4ea11a489601b8ad3dda9233938ababf1aa596ff3a38e5277ae2",
-      "review-11.png": "7ef20e94de0599affe6c7ea61426c6bbf23dad49af9211fa8ef501dc2c273518",
-      "review-12.png": "00d5cac94869c36ea02b678216fb06d69e926c21b9186b6e2c17ebe52a0e72d3",
-      "review-13.png": "5d09fe72c2cec07eb53359e4f61336de94295f2f28e8780789d27c029165ceb5",
-      "review-14.png": "4d7afc499f1bc1410bd9b6ccd3f09476e6691329677e2b59c2269f9bc15b3614",
-      "review-15.png": "2d42566706b963963535a6e9f18e4af3e0779de326fe92bf61c80d38e44edcb3",
-      "review-16.png": "df739cef6ea3720ec2bfc4148e79572ccd5158fb6b5afde0a844b9c01261586b",
-      "review-17.png": "8746288e9fd06feeb6232cf680ba87d0148ad16c8f301e1ed9a71d67335afbe4",
-      "review-18.png": "85e56b2397dd3757c94e1d29c0ea85bdd23ed6fcb97dfa3e33a16dff8fa6f317",
-      "review-19.png": "93821654b12889a35727d7eb3eb40a983cc9e36ee69b53d19fc1f59492c3ea41",
-      "review-20.png": "7f6353393e8c4aa3f8d12a6319feb22ad6efa5bdde649e2a8b869100fa41c3b4",
-      "review-21.png": "0322825ddaf56915c84a3dfdef838e946ce3ab541f0c07a154f5384234eb9026"
-    }
-  },
-  "runtime_check": {
+  "runtime": {
     "modules": 20,
-    "resources": 265,
-    "hash_mismatches": [],
-    "installer_matches": true,
+    "resource_files": 265,
+    "cross_module_links": 48,
+    "python_syntax": "passed",
+    "build": {
+      "ok": true,
+      "command": "build",
+      "namespace": "OhmyAIMCM",
+      "modules": 20,
+      "files": 265
+    },
+    "install": {
+      "ok": true,
+      "command": "install",
+      "namespace": "OhmyAIMCM",
+      "modules": 20,
+      "files": 265
+    },
+    "verify": {
+      "ok": true,
+      "command": "verify",
+      "namespace": "OhmyAIMCM",
+      "modules": 20,
+      "files": 265
+    },
     "health": {
       "message": "health ok",
       "valid": true,
@@ -80,12 +54,12 @@
       "unique_id_count": 145,
       "scope": "Local structure and source links only; not a new semantic or scientific review."
     },
-    "query_search": {
+    "query": {
       "message": "字面匹配；结果仅供按需回查，不强行选用。",
       "mode": "query",
       "keyword": "搜索",
       "card_id": null,
-      "limit": 3,
+      "limit": 1,
       "match_count": 1,
       "results": [
         {
@@ -121,49 +95,83 @@
           "source_note": "source gives one locator; all member provenance is stored in technique-variants.json."
         }
       ]
-    }
+    },
+    "existing_install_refused": true,
+    "modified_resource_rejected": true,
+    "modified_installer_rejected": true
   },
-  "historical_128_regressions_rerun": false,
-  "independent_reviewer_used_this_revision": false,
-  "new_numerical_or_scientific_validation": false,
-  "herbal_case": {
-    "sha256": "85c52477e38115d6cf9539e1d1ba361164613ff90e700fb8df035b0315abb1aa",
-    "pages": 285,
-    "figure_source_pages": [
+  "typesetter_regression": {
+    "tests": 37,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0,
+    "log_sha256": "1df6a0ce21a7576431e14de3e0622d67b0f4297808c31c91a30f9f13772ef155",
+    "repair": "LaTeX class, style macros and pagination fixture use the same OhmyAIMCM namespace."
+  },
+  "historical_128_test_suite_rerun": false,
+  "design_paper": {
+    "pages": 21,
+    "sha256": "71c2cc4a3116197018407e15651fce1a9210f747e34a5a18165a556715b6235f",
+    "tex_sha256": "2974c9ac503e77682f88765838be835fddb636fc9021e177e4dfa5144c8fc685",
+    "compiler": "XeLaTeX / TeX Live 2025",
+    "compile_exit_code": 0,
+    "diagnostics": [],
+    "visually_reviewed_pages": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
       10,
-      14
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21
     ],
-    "case_reading_scope": "Selected relevant prose and figure pages, not all source appendix code",
-    "original_bytes_preserved": true
+    "render_long_edge_px": 1200,
+    "page_sha256": {
+      "page-01.png": "309294b3134417a976577310d745d8fa267f645e08591db2d455905d11ada8f2",
+      "page-02.png": "7ac3ca9edeaa1c958da7db87ddfc7138afa84089720b4de733ad14dd4f54cf3b",
+      "page-03.png": "0f1e68d8b7be816436d1ef4c94af0e12022d8196dd4eb391b24287bd2969b510",
+      "page-04.png": "c954b72e98ee23d95a4d714e42c609957854664eb4ecac5d1d3bda338e67cb34",
+      "page-05.png": "8f46cf2dfd8b9888f7e3d3cca20e67a01b7e7c859c5456a5a8cd1f449d591a94",
+      "page-06.png": "7ff6e3f0b62d6dcef4d7ccfa9f6b7c9f5424dac5891f8ed42b0af7754a50d7f1",
+      "page-07.png": "651d5502bec719e5df1628215f3bae566fc05054d38fd113d203a51bff65902c",
+      "page-08.png": "821a1cfb22acac675a1e9eada217c1a6ca76d257e276e767876414dcb019958b",
+      "page-09.png": "0a0d5c37726fa65cd24d094e7875a18776239986c9a096ece4fe2e9757fe4721",
+      "page-10.png": "0335b0283decdfffb057d1c9298913dd1fecfec83a1007f7d0e4f16cebf6a25d",
+      "page-11.png": "8cc2863145407ad9645d086464354c9f216b033c61d1f2535d90a36c1ab65177",
+      "page-12.png": "83da8ef99f794705e115970536972e248c89501a54f55792e4f220b3c63e2433",
+      "page-13.png": "aa169d8a2391d6f92e78280e90014d9885d58ac7b1c3fa37b25d7d239af7bc29",
+      "page-14.png": "e349868171255d7f06f0e7df5976767398e7e363951acb6dece905e17b19ec90",
+      "page-15.png": "4142e3cf85dab7c02c1ad25b22ec73cbb2c9e1f0023a0b5a2ee2be70a5dc8d54",
+      "page-16.png": "3e66c91d8ab33c38de5eafb65ed503cbaae119ea7943b92a73c401b8d2a1ac85",
+      "page-17.png": "a92914d2848628368dea55d6d8da52dc02be13fc77a1772e8f4967e3f274f556",
+      "page-18.png": "0eab8b668ad88a51edbba6eeeb374759fcf34ac83352b60ad09dfaaced3f0737",
+      "page-19.png": "5843e5e0a104abcea3c4f76ee81a3bc93fd58d363abeee7dd53836f288af2500",
+      "page-20.png": "a5fb21e22dfc7bc35a80ae82f8ff7aa8891cb185df7d546f8027af5df0432852",
+      "page-21.png": "e71e8789882d8064c2044a194ebd914742805c9fd71b7f7dc2965bd6a43d5f9b"
+    },
+    "words_outside_page": [],
+    "legacy_name_matches": 0
   },
-  "source_record_hashes": {
-    "docs/architecture.md": "19fd783c1702b678b6e347913062fae6c0d834a6f1c084c9020aa920a3bafe26",
-    "layout-lab/pyproject.toml": "fdf96dd9145c6dea29d6a0fd59fac6fa68130df439f479a9d91ec4d1e5f0dde0",
-    "experiments/cumcm-suite-2026-09-05/audits/award-full-distillation-v2-20260906.md": "7fb11825c8fdd20c883dd29c25ad1f505a7021dc2f320b2b065742dd90e9d29f",
-    "experiments/writing-corpus-20260909/full-distillation/README.md": "959f338ed727a69d7e0d2b189fe9bd4bfc04891fd3b549cbc4e2e37644045f78",
-    "experiments/writing-corpus-20260909/full-distillation/api_distill.py": "765f3305716a7ba1ba20a5eb57f2c7cb7395104e8a5c2e10b2cc4834300d0816",
-    "experiments/writing-corpus-20260909/skill-unification-002/README.md": "765ddcb3f370da17295afa6178b5f916b786bd2f9fa15940c39b52239b7548b5",
-    "experiments/writing-corpus-20260909/skill-unification-002/consolidation-summary.json": "f9611360ec7cbfcc9216de7b9e9535ebe6e4678f2c5bfe1aaca3b7f4b2c3341c",
-    "experiments/cumcm-suite-2026-09-05/INSTALL-LAB-ULTRA.md": "f598144d7c03e5451cdae03b6b77b13d94e4ad46830b28a65dacb912f11b8411",
-    "output/pdf/lab-pro-design/main.tex": "43430fdad02e2b21108a3edcf4b568b95dd100106cfac22759e64126bd035b9e",
-    "output/pdf/lab-pro-design/lab-Pro-整体设计论文.pdf": "d13259911d473c2d6b9f3793f93174806e0977c4339f5a30d5f767d249709381",
-    "experiments/writing-corpus-20260909/skill-unification-002/bundle-check.json": "e5fbb48c2edc70b671da7a29c1571e757c0ddcc0ab75e2b0c1072baad608922b",
-    "experiments/writing-corpus-20260909/skill-unification-002/installed-check.json": "85291d6b3e141d5cc19f8d1a8a5be1bcada95d1e08cc04e396126ebd6ab3e2d0",
-    "experiments/writing-corpus-20260909/skill-unification-002/forward-validation.md": "69c874d4707c3b5af789b9fd4b4c01d52d6af6d9b8c990be6a01fc3d2fcb9027",
-    "experiments/cumcm-suite-2026-09-05/audits/native-collaboration-v2-20260907.md": "7dfcc425aa36be99a56288a8a2f4486697d12943df56169bd25ee057c617ddde",
-    "experiments/cumcm-suite-2026-09-05/audits/physical-scenes-and-diagram-style-20260907.md": "0cbb9b3bb878eaf7d66fddf2ae8571b206ac3e52e256d05f77a228164f914cae",
-    "experiments/cumcm-suite-2026-09-05/audits/danus-integration-v1-2026-09-05.md": "114ad73256b246a889f8d7fa3205e77620c4f37b05d9240a41ae251cfa65b49a",
-    "experiments/cumcm-suite-2026-09-05/distillation/v3/writing-transfer/outcome.md": "6ad31c212c1d7af3235d790a88d75fa6c7a76de30e139e7f4965d9ca775ab9aa",
-    "output/lab-ultra-unified/skills/lab-ultra-writing/references/exposition-cards.json": "810a97ee408d1f03b5d34b35c7eedd113a9acf984a9e479708b3eedadc2530d6",
-    "output/lab-ultra-unified/skills/lab-ultra-writing/references/technique-variants.json": "64d21b868fb2273f9c3c5c1141b5d43489e77f04983617eacd65e20d1897da2d",
-    "output/lab-ultra-unified/skills/lab-ultra-writing/references/conflict-decisions.md": "7ed4fb2e00f41dc1330190db3919542e26f38bc5875d805ec641e53c09144c84",
-    "output/lab-ultra-unified/skills/lab-ultra-typesetter/references/aesthetic-policy.md": "6f81ba629a2bf2dca98ecb373c72761838acec789dcd305373500cc0540fb9bd",
-    "output/lab-ultra-unified/skills/lab-ultra-typesetter/references/award-layout-calibration.md": "3b34b769ad862178d10867c147f1fbc07b42a5ce072e744cb4027bf886974466"
+  "supplied_case": {
+    "sha256": "85c52477e38115d6cf9539e1d1ba361164613ff90e700fb8df035b0315abb1aa",
+    "original_bytes_preserved": true,
+    "scope": "Historical source artifact; embedded code paths retained for provenance and reproducibility."
   },
-  "artifact_hashes": {
-    "main.tex": "48fd2b8a5dbf8a2f991b14cdb2e31cff77d276de21d6b93e7f4643e22a2d541d",
-    "Lab-ultra-unified-整体设计论文.pdf": "6c8393ee300d8e656452fce65777a26879bc841c48029f8e0774ce15387d4d19",
-    "assets/optical-apparatus.png": "b49ecacbc1f0796adaef70f0733e6fc0903a6d99412ad776ce623cde9bc54ca6",
-    "assets/herbal-drying.pdf": "85c52477e38115d6cf9539e1d1ba361164613ff90e700fb8df035b0315abb1aa"
-  }
+  "text_legacy_name_matches": [],
+  "manifest_sha256": "a89dc7ce7df9b1d850ed7bf4d2153f4300c80e565334f3c5cfe792427c98b49a",
+  "installer_sha256": "1426b1a0a536d7c2da6a1813f1b6e568fe2b4b114ddbd9857fcce43136d18904"
 }

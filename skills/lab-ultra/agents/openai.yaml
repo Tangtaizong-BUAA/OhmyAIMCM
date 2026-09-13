@@ -1,4 +1,0 @@
-interface:
-  display_name: "Lab-ultra"
-  short_description: "Coordinate focused CUMCM workers with evidence checks."
-  default_prompt: "Use $lab-ultra to coordinate this CUMCM task within my scope and budget, choosing only the workers needed."

@@ -1,0 +1,4 @@
+interface:
+  display_name: "OhmyAIMCM-review"
+  short_description: "Audit CUMCM evidence without confusing checks and proof."
+  default_prompt: "Use $OhmyAIMCM-review to audit these current artifacts read-only and distinguish verified findings from unchecked claims."

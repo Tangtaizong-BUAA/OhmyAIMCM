@@ -1,0 +1,296 @@
+% Controlled style surface for OhmyAIMCM-paper.cls.
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{OhmyAIMCM-style}[2026/08/12 v0.1 controlled CUMCM style]
+
+\RequirePackage{geometry}
+\RequirePackage{fancyhdr}
+\RequirePackage{setspace}
+\RequirePackage{titlesec}
+\RequirePackage{caption}
+\RequirePackage{booktabs}
+\RequirePackage{longtable}
+\RequirePackage{array}
+\RequirePackage{tabularx}
+\RequirePackage{enumitem}
+\RequirePackage{amsmath}
+\RequirePackage{amssymb}
+\RequirePackage{unicode-math}
+\RequirePackage{amsthm}
+\RequirePackage{graphicx}
+\RequirePackage{float}
+\RequirePackage{xcolor}
+\RequirePackage{etoolbox}
+\RequirePackage{needspace}
+\RequirePackage{xfp}
+
+% Pagination safety, independent of the selected aesthetic Style Tokens.
+% At endlongtable, box 0 contains the complete body only if LT@start has not
+% run yet.  Measure that existing box and the first head/final foot; never
+% typeset a trial copy (which would repeat captions, labels and footnotes).
+% Streamed tables and complete tables taller than a page retain longtable's
+% ordinary page-breaking output routine, including repeated heads/feet.
+\makeatletter
+\newdimen\OhmyAIMCM@TableHeight
+\newdimen\OhmyAIMCM@TableFootHeight
+\newcommand{\OhmyAIMCM@tableSavedNotes}[1]{%
+  \ifvoid#1\else
+    \advance\OhmyAIMCM@TableHeight\ht#1%
+    \advance\OhmyAIMCM@TableHeight\dp#1%
+    \advance\OhmyAIMCM@TableHeight\skip\footins
+  \fi
+}
+\newcommand{\OhmyAIMCM@guardCompletedTable}{%
+  \ifx\LT@start\endgraf
+    \typeout{CUMCM-TABLE-GUARD table=\arabic{LT@tables} mode=streamed}%
+  \else
+    \OhmyAIMCM@TableHeight=\dimexpr\ht\z@+\dp\z@\relax
+    \ifvoid\LT@firsthead
+      \advance\OhmyAIMCM@TableHeight\dimexpr\ht\LT@head+\dp\LT@head\relax
+    \else
+      \advance\OhmyAIMCM@TableHeight\dimexpr\ht\LT@firsthead+\dp\LT@firsthead\relax
+    \fi
+    % longtable reserves the ordinary foot before selecting the final foot.
+    \OhmyAIMCM@TableFootHeight=\dimexpr\ht\LT@foot+\dp\LT@foot\relax
+    \ifdim\dimexpr\ht\LT@lastfoot+\dp\LT@lastfoot\relax>\OhmyAIMCM@TableFootHeight
+      \OhmyAIMCM@TableFootHeight=\dimexpr\ht\LT@lastfoot+\dp\LT@lastfoot\relax
+    \fi
+    \advance\OhmyAIMCM@TableHeight\OhmyAIMCM@TableFootHeight
+    \advance\OhmyAIMCM@TableHeight\LTpre
+    \advance\OhmyAIMCM@TableHeight\LTpost
+    % Account for the natural page-top allowance and Pandoc's saved notes.
+    \advance\OhmyAIMCM@TableHeight\topskip
+    \@ifundefined{FNH@notes}{}{\OhmyAIMCM@tableSavedNotes\FNH@notes}%
+    \@ifundefined{fn@notes}{}{\OhmyAIMCM@tableSavedNotes\fn@notes}%
+    \ifdim\OhmyAIMCM@TableHeight>\textheight
+      \typeout{CUMCM-TABLE-GUARD table=\arabic{LT@tables} mode=breakable height=\the\OhmyAIMCM@TableHeight}%
+    \else
+      \typeout{CUMCM-TABLE-GUARD table=\arabic{LT@tables} mode=keep height=\the\OhmyAIMCM@TableHeight}%
+      \Needspace{\OhmyAIMCM@TableHeight}%
+    \fi
+  \fi
+}
+% This exact hook is shared by supported longtable releases.  A changed
+% implementation must stop compilation rather than silently lose the guard.
+% Replace tokens without retokenizing: current longtable mixes expl3 names and
+% ordinary message spaces, which etoolbox's string patch cannot round-trip.
+\ExplSyntaxOn
+\group_begin:
+\tl_set:No \l_tmpa_tl { \endlongtable }
+\tl_if_in:NnTF \l_tmpa_tl { \LT@echunk \LT@start }
+  {
+    \tl_replace_once:Nnn \l_tmpa_tl
+      { \LT@echunk \LT@start }
+      { \LT@echunk \OhmyAIMCM@guardCompletedTable \LT@start }
+    \cs_gset:Npx \endlongtable { \exp_not:V \l_tmpa_tl }
+  }
+  {\PackageError{OhmyAIMCM-style}{Unsupported~longtable~pagination~hook}%
+    {The~measured~table~guard~must~be~adapted~and~tested~for~this~longtable~release.}}
+\group_end:
+\ExplSyntaxOff
+\makeatother
+
+\definecolor{OhmyAIMCMInk}{HTML}{111827}
+\definecolor{OhmyAIMCMRule}{HTML}{334155}
+
+\newcommand{\OhmyAIMCMBodyFontSize}{10.5}
+\newcommand{\OhmyAIMCMBodyLeading}{14.2}
+\newcommand{\OhmyAIMCMTitleRatio}{1.71}
+\newcommand{\OhmyAIMCMTitleRole}{serif}
+\newcommand{\OhmyAIMCMTitleAlignmentMode}{centered}
+\newcommand{\OhmyAIMCMAbstractHeadingRole}{serif}
+\newcommand{\OhmyAIMCMAbstractHeadingAlignmentMode}{centered}
+\newcommand{\OhmyAIMCMHOneRole}{serif}
+\newcommand{\OhmyAIMCMHOneAlignmentMode}{centered}
+\newcommand{\OhmyAIMCMHTwoRole}{serif}
+\newcommand{\OhmyAIMCMHTwoAlignmentMode}{left_aligned}
+\newcommand{\OhmyAIMCMCaptionRatio}{0.88}
+\newcommand{\OhmyAIMCMNumberingStyle}{none}
+\newcommand{\OhmyAIMCMRoleFont}[1]{%
+  \edef\OhmyAIMCMCurrentRole{#1}%
+  \ifdefstring{\OhmyAIMCMCurrentRole}{sans}{\sffamily\heiti}{\rmfamily\songti}%
+}
+\newcommand{\OhmyAIMCMAlignment}[1]{%
+  \edef\OhmyAIMCMCurrentAlignment{#1}%
+  \ifdefstring{\OhmyAIMCMCurrentAlignment}{centered}{\centering}{\raggedright}%
+}
+\newcommand{\OhmyAIMCMTitleFont}{\bfseries\OhmyAIMCMRoleFont{\OhmyAIMCMTitleRole}\fontsize{\fpeval{\OhmyAIMCMBodyFontSize*\OhmyAIMCMTitleRatio}pt}{\fpeval{\OhmyAIMCMBodyFontSize*\OhmyAIMCMTitleRatio*1.28}pt}\selectfont}
+\newcommand{\OhmyAIMCMTitleAlignment}{\OhmyAIMCMAlignment{\OhmyAIMCMTitleAlignmentMode}}
+\newcommand{\OhmyAIMCMAbstractHeadingFont}{\bfseries\OhmyAIMCMRoleFont{\OhmyAIMCMAbstractHeadingRole}\fontsize{\fpeval{\OhmyAIMCMBodyFontSize*\OhmyAIMCMHOneRatio}pt}{\fpeval{\OhmyAIMCMBodyFontSize*\OhmyAIMCMHOneRatio*1.30}pt}\selectfont}
+\newcommand{\OhmyAIMCMAbstractHeadingAlignment}{\OhmyAIMCMAlignment{\OhmyAIMCMAbstractHeadingAlignmentMode}}
+\newcommand{\OhmyAIMCMSectionFont}{\bfseries\OhmyAIMCMRoleFont{\OhmyAIMCMHOneRole}\fontsize{14pt}{19pt}\selectfont}
+\newcommand{\OhmyAIMCMSubsectionFont}{\bfseries\OhmyAIMCMRoleFont{\OhmyAIMCMHTwoRole}\fontsize{12pt}{17pt}\selectfont}
+\newcommand{\OhmyAIMCMSubsubsectionFont}{\bfseries\OhmyAIMCMRoleFont{\OhmyAIMCMHTwoRole}\fontsize{10.5pt}{15pt}\selectfont}
+\newcommand{\OhmyAIMCMHOneRatio}{1.48}
+\newcommand{\OhmyAIMCMHTwoRatio}{1.25}
+\newcommand{\OhmyAIMCMHThreeRatio}{1.10}
+\newcommand{\OhmyAIMCMHOneBefore}{1.55}
+\newcommand{\OhmyAIMCMHOneAfter}{0.72}
+\newcommand{\OhmyAIMCMHTwoBefore}{1.15}
+\newcommand{\OhmyAIMCMHTwoAfter}{0.55}
+\newcommand{\OhmyAIMCMDisplayAbove}{0.72}
+\newcommand{\OhmyAIMCMDisplayBelow}{0.72}
+\newcommand{\OhmyAIMCMArrayStretch}{1.18}
+\newcommand{\OhmyAIMCMParagraphIndent}{2.0}
+\newcommand{\OhmyAIMCMWidowPenalty}{10000}
+\newcommand{\OhmyAIMCMClubPenalty}{10000}
+\newcommand{\OhmyAIMCMHeadingKeepLines}{3}
+\newif\ifOhmyAIMCMabstractpagebreak
+\OhmyAIMCMabstractpagebreaktrue
+\newif\ifOhmyAIMCMfirstafterheadingindent
+\OhmyAIMCMfirstafterheadingindenttrue
+
+% The Python renderer validates every argument before emitting this call.
+\newcommand{\OhmyAIMCMApplyStyle}[8]{%
+  \geometry{a4paper,top=#1mm,bottom=#2mm,left=#3mm,right=#4mm}%
+  \renewcommand{\OhmyAIMCMBodyFontSize}{#5}%
+  \renewcommand{\OhmyAIMCMBodyLeading}{#6}%
+  \renewcommand{\OhmyAIMCMParagraphIndent}{#7}%
+  \setlength{\parskip}{#8em}%
+}
+
+\newcommand{\OhmyAIMCMApplyFonts}[3]{%
+  \def\OhmyAIMCMRequestedCJK{#1}%
+  \ifdefstring{\OhmyAIMCMRequestedCJK}{FandolSong-Regular.otf}{}{\setCJKmainfont{#1}}%
+  \setmainfont{#2}%
+  \setmathfont{#3}%
+}
+
+\newcommand{\OhmyAIMCMApplyHeadingStyle}[7]{%
+  \renewcommand{\OhmyAIMCMHOneRatio}{#1}%
+  \renewcommand{\OhmyAIMCMHTwoRatio}{#2}%
+  \renewcommand{\OhmyAIMCMHThreeRatio}{#3}%
+  \renewcommand{\OhmyAIMCMHOneBefore}{#4}%
+  \renewcommand{\OhmyAIMCMHOneAfter}{#5}%
+  \renewcommand{\OhmyAIMCMHTwoBefore}{#6}%
+  \renewcommand{\OhmyAIMCMHTwoAfter}{#7}%
+  \renewcommand{\OhmyAIMCMSectionFont}{\Needspace{\OhmyAIMCMHeadingKeepLines\baselineskip}\bfseries\OhmyAIMCMRoleFont{\OhmyAIMCMHOneRole}\fontsize{\fpeval{\OhmyAIMCMBodyFontSize*\OhmyAIMCMHOneRatio}pt}{\fpeval{\OhmyAIMCMBodyFontSize*\OhmyAIMCMHOneRatio*1.30}pt}\selectfont}%
+  \renewcommand{\OhmyAIMCMSubsectionFont}{\Needspace{\OhmyAIMCMHeadingKeepLines\baselineskip}\bfseries\OhmyAIMCMRoleFont{\OhmyAIMCMHTwoRole}\fontsize{\fpeval{\OhmyAIMCMBodyFontSize*\OhmyAIMCMHTwoRatio}pt}{\fpeval{\OhmyAIMCMBodyFontSize*\OhmyAIMCMHTwoRatio*1.35}pt}\selectfont}%
+  \renewcommand{\OhmyAIMCMSubsubsectionFont}{\Needspace{\OhmyAIMCMHeadingKeepLines\baselineskip}\bfseries\OhmyAIMCMRoleFont{\OhmyAIMCMHTwoRole}\fontsize{\fpeval{\OhmyAIMCMBodyFontSize*\OhmyAIMCMHThreeRatio}pt}{\fpeval{\OhmyAIMCMBodyFontSize*\OhmyAIMCMHThreeRatio*1.40}pt}\selectfont}%
+  \titleformat{\section}{\OhmyAIMCMSectionFont\OhmyAIMCMAlignment{\OhmyAIMCMHOneAlignmentMode}}{\thesection}{0.8em}{}%
+  \titleformat{\subsection}{\OhmyAIMCMSubsectionFont}{\thesubsection}{0.75em}{}%
+  \titleformat{\subsubsection}{\OhmyAIMCMSubsubsectionFont}{\thesubsubsection}{0.65em}{}%
+  \titlespacing*{\section}{0pt}{#4em}{#5em}%
+  \titlespacing*{\subsection}{0pt}{#6em}{#7em}%
+  \titlespacing*{\subsubsection}{0pt}{\fpeval{#6*0.78}em}{\fpeval{#7*0.78}em}%
+}
+
+\newcommand{\OhmyAIMCMApplyRoleStyle}[9]{%
+  \renewcommand{\OhmyAIMCMTitleRole}{#1}%
+  \renewcommand{\OhmyAIMCMTitleAlignmentMode}{#2}%
+  \renewcommand{\OhmyAIMCMTitleRatio}{#3}%
+  \renewcommand{\OhmyAIMCMAbstractHeadingRole}{#4}%
+  \renewcommand{\OhmyAIMCMAbstractHeadingAlignmentMode}{#5}%
+  \renewcommand{\OhmyAIMCMHOneRole}{#6}%
+  \renewcommand{\OhmyAIMCMHOneAlignmentMode}{#7}%
+  \renewcommand{\OhmyAIMCMHTwoRole}{#8}%
+  \renewcommand{\OhmyAIMCMHTwoAlignmentMode}{#9}%
+  \titleformat{\section}{\OhmyAIMCMSectionFont\OhmyAIMCMAlignment{\OhmyAIMCMHOneAlignmentMode}}{\thesection}{0.8em}{}%
+  \titleformat{\subsection}{\OhmyAIMCMSubsectionFont\OhmyAIMCMAlignment{\OhmyAIMCMHTwoAlignmentMode}}{\thesubsection}{0.75em}{}%
+  \titleformat{\subsubsection}{\OhmyAIMCMSubsubsectionFont\OhmyAIMCMAlignment{\OhmyAIMCMHTwoAlignmentMode}}{\thesubsubsection}{0.65em}{}%
+}
+
+\newcommand{\OhmyAIMCMApplyNumbering}[1]{%
+  \renewcommand{\OhmyAIMCMNumberingStyle}{#1}%
+  \def\OhmyAIMCMCurrentNumbering{#1}%
+  \ifdefstring{\OhmyAIMCMCurrentNumbering}{chinese_h1_arabic_h2}{%
+    \renewcommand{\thesection}{\chinese{section}、}%
+    \renewcommand{\thesubsection}{\arabic{section}.\arabic{subsection}}%
+    \renewcommand{\thesubsubsection}{\arabic{section}.\arabic{subsection}.\arabic{subsubsection}}%
+  }{%
+    \renewcommand{\thesection}{\arabic{section}}%
+    \renewcommand{\thesubsection}{\arabic{section}.\arabic{subsection}}%
+    \renewcommand{\thesubsubsection}{\arabic{section}.\arabic{subsection}.\arabic{subsubsection}}%
+  }%
+}
+
+\DeclareCaptionFont{OhmyAIMCMcontrolled}{\fontsize{\fpeval{\OhmyAIMCMBodyFontSize*\OhmyAIMCMCaptionRatio}pt}{\fpeval{\OhmyAIMCMBodyFontSize*\OhmyAIMCMCaptionRatio*1.35}pt}\selectfont}
+\newcommand{\OhmyAIMCMApplyCaptionStyle}[3]{%
+  \renewcommand{\OhmyAIMCMCaptionRatio}{#1}%
+  \captionsetup[figure]{font=OhmyAIMCMcontrolled,labelfont=bf,labelsep=quad,justification=#2,singlelinecheck=false}%
+  \captionsetup[table]{font=OhmyAIMCMcontrolled,labelfont=bf,labelsep=quad,justification=#3,singlelinecheck=false}%
+}
+
+\newcommand{\OhmyAIMCMApplyMathStyle}[3]{%
+  \renewcommand{\OhmyAIMCMDisplayAbove}{#1}%
+  \renewcommand{\OhmyAIMCMDisplayBelow}{#2}%
+  \renewcommand{\OhmyAIMCMArrayStretch}{#3}%
+}
+
+\newcommand{\OhmyAIMCMApplyFlowStyle}[4]{%
+  \renewcommand{\OhmyAIMCMWidowPenalty}{#1}%
+  \renewcommand{\OhmyAIMCMClubPenalty}{#2}%
+  \renewcommand{\OhmyAIMCMHeadingKeepLines}{#3}%
+  \csname OhmyAIMCMfirstafterheadingindent#4\endcsname
+}
+
+\makeatletter
+\newcommand{\OhmyAIMCMEnableFirstIndent}{\let\@afterindentfalse\@afterindenttrue}
+\makeatother
+
+\AtBeginDocument{%
+  \color{OhmyAIMCMInk}%
+  \fontsize{\OhmyAIMCMBodyFontSize pt}{\OhmyAIMCMBodyLeading pt}\selectfont
+  % ctexart initializes its paragraph layout at begin-document time.  Apply the
+  % validated token here so that the class cannot silently overwrite it.
+  \setlength{\parindent}{\OhmyAIMCMParagraphIndent em}%
+  \setlength{\abovedisplayskip}{\OhmyAIMCMDisplayAbove em plus 0.2em minus 0.15em}%
+  \setlength{\belowdisplayskip}{\OhmyAIMCMDisplayBelow em plus 0.2em minus 0.15em}%
+  \setlength{\abovedisplayshortskip}{\OhmyAIMCMDisplayAbove em plus 0.15em minus 0.1em}%
+  \setlength{\belowdisplayshortskip}{\OhmyAIMCMDisplayBelow em plus 0.15em minus 0.1em}%
+  \renewcommand{\arraystretch}{\OhmyAIMCMArrayStretch}%
+  \widowpenalty=\OhmyAIMCMWidowPenalty
+  \clubpenalty=\OhmyAIMCMClubPenalty
+  \displaywidowpenalty=\OhmyAIMCMWidowPenalty
+  \ifOhmyAIMCMfirstafterheadingindent\OhmyAIMCMEnableFirstIndent\fi
+}
+
+\pagestyle{fancy}
+\fancyhf{}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+\fancyfoot[C]{\small\thepage}
+\fancypagestyle{plain}{\fancyhf{}\fancyfoot[C]{\small\thepage}\renewcommand{\headrulewidth}{0pt}}
+
+\titleformat{\section}{\OhmyAIMCMSectionFont\OhmyAIMCMAlignment{\OhmyAIMCMHOneAlignmentMode}}{\thesection}{0.8em}{}
+\titleformat{\subsection}{\OhmyAIMCMSubsectionFont\OhmyAIMCMAlignment{\OhmyAIMCMHTwoAlignmentMode}}{\thesubsection}{0.75em}{}
+\titleformat{\subsubsection}{\OhmyAIMCMSubsubsectionFont\OhmyAIMCMAlignment{\OhmyAIMCMHTwoAlignmentMode}}{\thesubsubsection}{0.65em}{}
+\titlespacing*{\section}{0pt}{1.45em}{0.75em}
+\titlespacing*{\subsection}{0pt}{1.15em}{0.55em}
+\titlespacing*{\subsubsection}{0pt}{0.9em}{0.4em}
+
+\captionsetup{font=OhmyAIMCMcontrolled,labelfont=bf,labelsep=quad,justification=centering,singlelinecheck=false}
+\setlist{nosep,leftmargin=2em,topsep=0.35em}
+\setlength{\textfloatsep}{1.0em plus 0.2em minus 0.2em}
+\setlength{\floatsep}{0.8em plus 0.2em minus 0.2em}
+\setlength{\intextsep}{0.8em plus 0.2em minus 0.2em}
+
+\renewenvironment{abstract}{%
+  \par\begingroup
+  \vspace*{\OhmyAIMCMHOneBefore em}%
+  {\OhmyAIMCMAbstractHeadingFont\OhmyAIMCMAbstractHeadingAlignment 摘要\par}%
+  \vspace{\OhmyAIMCMHOneAfter em}%
+  \setlength{\parindent}{\OhmyAIMCMParagraphIndent em}%
+}{%
+  \par\endgroup
+  \ifOhmyAIMCMabstractpagebreak\clearpage\fi
+}
+
+\newenvironment{keywords}{%
+  \par\vspace{0.5em}\noindent\textbf{关键词：}\ignorespaces
+}{\par}
+
+\newtheoremstyle{OhmyAIMCMplain}%
+  {0.65em}{0.65em}{\normalfont}{0pt}{\bfseries}{：}{0.5em}{}
+\theoremstyle{OhmyAIMCMplain}
+\newtheorem{OhmyAIMCMassumption}{假设}
+\newtheorem{OhmyAIMCMdefinition}{定义}
+\newtheorem{OhmyAIMCMtheorem}{定理}
+\newtheorem{OhmyAIMCMlemma}{引理}
+\newtheorem{OhmyAIMCMproposition}{命题}
+\newtheorem{OhmyAIMCMalgorithm}{算法}
+\newtheorem{OhmyAIMCMresult}{结果}
+\newenvironment{OhmyAIMCMproof}{\par\noindent\textbf{证明：}\ignorespaces}{\hfill$\square$\par}
+\newenvironment{OhmyAIMCMnote}{\par\small\noindent\textbf{说明：}\ignorespaces}{\par}
+\newenvironment{cummodel}{\par\noindent\textbf{模型：}\ignorespaces}{\par}
+
+\endinput

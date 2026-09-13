@@ -1,0 +1,4 @@
+interface:
+  display_name: "OhmyAIMCM-compute"
+  short_description: "Run scoped computations and preserve executable evidence."
+  default_prompt: "Use $OhmyAIMCM-compute to run a bounded, reproducible experiment for this modeling question."

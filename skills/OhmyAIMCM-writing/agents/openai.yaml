@@ -1,0 +1,4 @@
+interface:
+  display_name: "OhmyAIMCM-writing"
+  short_description: "Unified writing techniques with conditions and source fidelity."
+  default_prompt: "Use $OhmyAIMCM-writing to write or revise this CUMCM paper while preserving its mathematics and evidence."

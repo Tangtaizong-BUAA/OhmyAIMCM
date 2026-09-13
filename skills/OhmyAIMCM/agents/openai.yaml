@@ -1,0 +1,4 @@
+interface:
+  display_name: "OhmyAIMCM"
+  short_description: "Coordinate focused CUMCM workers with evidence checks."
+  default_prompt: "Use $OhmyAIMCM to coordinate this CUMCM task within my scope and budget, choosing only the workers needed."

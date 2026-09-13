@@ -1,6 +1,6 @@
 # OhmyAIMCM 蒸馏技术与证据说明
 
-这份说明对应 `lab-ultra-unified-20260910-r2` 的运行时资源，以及开发仓库中已经记录的离线工作。发行目录包含 20 模块运行时，下面提到的离线研究源码路径属于开发仓库，未全部复制到本目录。
+这份说明对应 `OhmyAIMCM-20260913`（基于 2026-09-10 统一资源） 的运行时资源，以及开发仓库中已经记录的离线工作。发行目录包含 20 模块运行时，下面提到的离线研究源码路径属于开发仓库，未全部复制到本目录。
 
 ## 版式数据如何产生
 
@@ -22,9 +22,9 @@
 
 国赛优先的共同几何校准纳入 64 篇获奖展示稿和 752 个期刊身份，分别分配 0.60 / 0.40 总质量，组内按篇等权。64 篇国赛稿全部有正文候选几何，期刊为 750 / 752，两篇缺失没有填零。
 
-在 0.60 权重下，文本外包络面积的加权中位数为 0.5108075，左右文本边界比例为 0.112 / 0.115。外包络不等于实际墨迹面积，边界比例也不能直接替换 LaTeX 页边距。权重敏感性和逐年留出已经计算，但 `runtime_transfer_eligible` 仍为 `false`。具体方法及限制见[国赛布局校准](../skills/lab-ultra-typesetter/references/award-layout-calibration.md)。
+在 0.60 权重下，文本外包络面积的加权中位数为 0.5108075，左右文本边界比例为 0.112 / 0.115。外包络不等于实际墨迹面积，边界比例也不能直接替换 LaTeX 页边距。权重敏感性和逐年留出已经计算，但 `runtime_transfer_eligible` 仍为 `false`。具体方法及限制见[国赛布局校准](../skills/OhmyAIMCM-typesetter/references/award-layout-calibration.md)。
 
-期刊发现语料中的 752 个身份，只有 21 个达到 `publisher-final` 来源锚点要求。后续 v2.1 研究没有得到符合运行时导出条件的新共识因子或语义效应。当前使用的 `journal-dense-cn-v1` 是作者明确选择的旧版投影，记录为 `legacy_unverified_v1`，不能称作 v2.1 认证结果。参见[默认策略](../skills/lab-ultra-typesetter/references/aesthetic-policy.md)。
+期刊发现语料中的 752 个身份，只有 21 个达到 `publisher-final` 来源锚点要求。后续 v2.1 研究没有得到符合运行时导出条件的新共识因子或语义效应。当前使用的 `journal-dense-cn-v1` 是作者明确选择的旧版投影，记录为 `legacy_unverified_v1`，不能称作 v2.1 认证结果。参见[默认策略](../skills/OhmyAIMCM-typesetter/references/aesthetic-policy.md)。
 
 ## 内容蒸馏的处理单元
 
@@ -60,7 +60,7 @@ SQLite 保存文档和任务状态，配合并发执行、重试与预算预留�
 
 运行时的通用技巧源是 `exposition-cards.json`，条件规则及成员来源在 `technique-variants.json`。查询器按字面匹配返回少量相关规则，使用时保留 `rule`、`conditions`、`misuse`。来源定位方便维护者追溯，但本发行目录不包含原始论文和所有开发分析文件。
 
-源码定位：`experiments/writing-corpus-20260909/full-distillation/api_distill.py`、`experiments/writing-corpus-20260909/skill-unification-002/`；随发行版提供的查询器见[query_variants.py](../skills/lab-ultra-writing/scripts/query_variants.py)。
+源码定位：`experiments/writing-corpus-20260909/full-distillation/api_distill.py`、`experiments/writing-corpus-20260909/skill-unification-002/`；随发行版提供的查询器见[query_variants.py](../skills/OhmyAIMCM-writing/scripts/query_variants.py)。
 
 ## 覆盖和验证分别怎么算
 
@@ -86,6 +86,6 @@ SQLite 保存文档和任务状态，配合并发执行、重试与预算预留�
 | `experiments/writing-corpus-20260909/full-distillation/README.md` | 1,585 份转换文本批次及原库未完成范围 |
 | `experiments/writing-corpus-20260909/skill-unification-002/README.md` | 统一归并方法、计数和历史验证 |
 | `experiments/writing-corpus-20260909/skill-unification-002/consolidation-summary.json` | 6,230 条候选、补充记录、68 卡和 145 细分 |
-| `experiments/cumcm-suite-2026-09-05/INSTALL-LAB-ULTRA.md` | 完整安装范围和发行版验证记录 |
+| 发行与安装核查记录，见 `design-paper/qa.json` 的前序提交索引 | 完整安装范围和发行版验证记录 |
 
-正文链接可直接打开本分发目录中的规则与策略。发行版原有 [manifest](../manifest.json) 继续只覆盖 Skill 资源；新增 README、案例与预览的记录位于 [README 核验记录](readme-verification.json)。
+正文链接可直接打开本分发目录中的规则与策略。发行版原有 [manifest](../manifest.json) 继续只覆盖 Skill 资源；新增 README、案例与预览的记录位于 [README 核验记录](verification.json)。

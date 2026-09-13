@@ -1,0 +1,4 @@
+interface:
+  display_name: "OhmyAIMCM-modeling"
+  short_description: "Develop and challenge models without a method quota."
+  default_prompt: "Use $OhmyAIMCM-modeling to formulate this subproblem and choose the most informative way to test the approach."

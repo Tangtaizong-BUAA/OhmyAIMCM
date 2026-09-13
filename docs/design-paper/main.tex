@@ -6,8 +6,8 @@
 \usepackage{tikz}
 \usetikzlibrary{arrows.meta,positioning}
 \hypersetup{unicode=true,colorlinks=true,linkcolor=black,citecolor=black,urlcolor=black,
-  pdftitle={Lab-ultra-unified：面向数学建模论文的双路论文蒸馏与可追溯数模工作流},
-  pdfauthor={Lab-ultra-unified 项目设计说明},pdfsubject={架构、信息流、写作蒸馏、科学绘图与验证边界}}
+  pdftitle={OhmyAIMCM：面向数学建模论文的双路论文蒸馏与可追溯数模工作流},
+  pdfauthor={OhmyAIMCM 项目设计说明},pdfsubject={架构、信息流、写作蒸馏、科学绘图与验证边界}}
 \setlength{\parindent}{2em}
 \setlength{\parskip}{0pt}
 \linespread{1.16}
@@ -20,21 +20,21 @@
 \captionsetup{font=small,labelfont=bf,labelsep=quad,skip=7pt}
 \setlist{nosep,leftmargin=2em}
 \pagestyle{fancy}\fancyhf{}
-\fancyhead[L]{\small Lab-ultra-unified：论文蒸馏与工作流}
+\fancyhead[L]{\small OhmyAIMCM：论文蒸馏与工作流}
 \fancyhead[R]{\small 技术设计论文}
 \fancyfoot[C]{\small\thepage}
 \renewcommand{\headrulewidth}{.3pt}
 \newcolumntype{Y}{>{\raggedright\arraybackslash}X}
-\newcommand{\sys}{\textsf{Lab-ultra-unified}}
+\newcommand{\sys}{\textsf{OhmyAIMCM}}
 \newcommand{\code}[1]{\texttt{\small #1}}
-\title{\bfseries Lab-ultra-unified：面向数学建模论文的\\双路论文蒸馏与可追溯数模工作流}
+\title{\bfseries OhmyAIMCM：面向数学建模论文的\\双路论文蒸馏与可追溯数模工作流}
 \author{项目设计与实现说明（统一版）}
 \date{2026 年 9 月 13 日}
 
 \begin{document}
 \maketitle
 \begin{abstract}
-数学建模论文需要同时保持模型解释、计算结果、图文组织与版本修订的一致性。本文介绍 Lab-ultra-unified，一套由一个协调入口与十九个子模块组成的论文工作流，并详细说明其离线蒸馏与运行时使用方式。系统将论文资料分为版式与内容两条处理路线：版式路线由确定性解析器提取页面几何，以结构语义组织统计，通过按篇加权、代表样式选取及分组验证研究可迁移的排版控制；内容路线从连续文本中建立论证地图，提取带原文定位的表达动作，经引用校验、语义复核和条件归并形成写作资源。2026 年 9 月 10 日统一版基于 1,585 份最终文本分析，为 6,230 条原候选建立采用或排除去向，另吸收 46 条补充记录，得到 68 个通用技巧与 145 个条件细分。运行时按具体读者困难检索规则，保留适用条件及误用限制，利用轻量证据依赖记录连接计算、正文、图注和审查。本文在原有设计论文基础上更新版本与实现说明，加入统一技巧库的数据结构、版式准入边界、完整分发机制和药材烘干论文案例。已有发行记录包含 20 模块、265 个资源文件及 128 项通过的回归检查；本次另外复核了资源哈希与写作查询。上述证据支持已记录的接口和局部表达行为，尚不足以确认整篇论文质量的统计提升。
+数学建模论文需要同时保持模型解释、计算结果、图文组织与版本修订的一致性。本文介绍 OhmyAIMCM，一套由一个协调入口与十九个子模块组成的论文工作流，并详细说明其离线蒸馏与运行时使用方式。系统将论文资料分为版式与内容两条处理路线：版式路线由确定性解析器提取页面几何，以结构语义组织统计，通过按篇加权、代表样式选取及分组验证研究可迁移的排版控制；内容路线从连续文本中建立论证地图，提取带原文定位的表达动作，经引用校验、语义复核和条件归并形成写作资源。2026 年 9 月 10 日统一版基于 1,585 份最终文本分析，为 6,230 条原候选建立采用或排除去向，另吸收 46 条补充记录，得到 68 个通用技巧与 145 个条件细分。运行时按具体读者困难检索规则，保留适用条件及误用限制，利用轻量证据依赖记录连接计算、正文、图注和审查。本文在原有设计论文基础上更新版本与实现说明，加入统一技巧库的数据结构、版式准入边界、完整分发机制和药材烘干论文案例。已有发行记录包含 20 模块、265 个资源文件及 128 项通过的回归检查；本次另外复核了资源哈希与写作查询。上述证据支持已记录的接口和局部表达行为，尚不足以确认整篇论文质量的统计提升。
 
 \end{abstract}
 \noindent\textbf{关键词：}数学建模；Skill；内容蒸馏；语义版式；条件写作技巧；证据溯源
@@ -47,7 +47,7 @@
 
 系统的任务环境专门化主要通过 Skill 指令、结构化参考资源和确定性工具完成。本文使用“蒸馏”指从来源材料提取、核查并归并可迁移经验的过程。内容蒸馏没有训练或发布新的基础大模型权重；版式研究则包括统计建模和有边界的参数投影。二者的输出和验证责任不同，因此分别介绍。
 
-本文绑定的运行时版本是 \code{lab-ultra-unified-20260910-r2}，文稿修订日期为 2026 年 9 月 13 日。对外项目名为 \code{lab-ultra-unified}，实际调用入口仍是 \code{lab-ultra}，同套子模块使用 \code{lab-ultra-*}。维护源位于实验目录的 \code{candidate/skills/}；旧 lab-pro、labv3 和稳定版 cumcm 保持各自身份。正文中的当前实现均以该统一版的文件与 manifest 为准\cite{install}。
+本文使用 2026 年 9 月 10 日完成统一归并的资源，并于 2026 年 9 月 13 日将项目及模块命名统一为 OhmyAIMCM。主入口为 \code{OhmyAIMCM}，十九个子模块使用 \code{OhmyAIMCM-*}。当前可安装资源位于仓库的 \code{skills/}；安装器依据 manifest 校验完整模块集合。命名迁移检查与前序科学验证分别记录。
 
 本文的设计工作集中在两处。其一，把语料中的页面安排和解释动作分别转化为可检查的数据，避免两类证据混用；其二，将归并后的规则接入按需写作和版本追踪，使来源经验能够在具体解释困难处被调用。文中同时保留设计意图、实现事实、历史试验与本次核查的区别。
 
@@ -80,13 +80,13 @@
 
 \begin{table}[htbp]
 \centering\small
-\caption{完整套件的职责划分。模块名省略共同的 \texttt{lab-ultra-} 前缀；主入口为 \texttt{lab-ultra}。}
+\caption{完整套件的职责划分。模块名省略共同的 \texttt{OhmyAIMCM-} 前缀；主入口为 \texttt{OhmyAIMCM}。}
 \label{tab:modules}
 \begin{tabularx}{\linewidth}{@{}p{24mm}Yp{12mm}Y@{}}
 \toprule
 层次 & 模块 & 数量 & 主要责任\\
 \midrule
-主协调 & lab-ultra & 1 & 确认范围、按需分派、整合结果与安排复核\\
+主协调 & OhmyAIMCM & 1 & 确认范围、按需分派、整合结果与安排复核\\
 建模与论文 & intake、modeling、compute、writing、review、references、sciverse、typesetter & 8 & 题意与资料、数学构造、真实计算、正文、审查、检索和排版\\
 科学图形 & scientific-figure-maker、academic-plotting、agent-figure-gallery、draw-io、evaluate-diagram、figure-generation、figure-spec、generate-diagram、generate-plot、scientific-visualization、scipilot-figure-skill & 11 & 图意组织、参考检索、图形生成、导出和检查\\
 \bottomrule
@@ -357,11 +357,11 @@ w_j\lVert\boldsymbol z_i-\boldsymbol z_j\rVert_1,
 
 \subsection{完整分发与命名空间绑定}
 
-统一版从维护源的明确清单构建 20 个模块，映射主入口及全部子模块名称，同步相对引用和资源哈希。\code{manifest.json} 保存目标文件与源树身份，安装器 \code{install\_lab.py} 完整复制并核验资源，遇到已有同名目录时拒绝合并覆盖。它没有把原始论文、账户认证、外部运行环境或模型权重加入运行时包。
+统一版从维护源的明确清单构建 20 个模块，映射主入口及全部子模块名称，同步相对引用和资源哈希。\code{manifest.json} 保存目标文件与源树身份，安装器 \code{install.py} 完整复制并核验资源，遇到已有同名目录时拒绝合并覆盖。它没有把原始论文、账户认证、外部运行环境或模型权重加入运行时包。
 
 2026 年 9 月 10 日发行记录包含 20 个模块、265 个资源文件和 28 处跨模块入口链接。包内与实际安装后分别通过 128 项回归，失败、错误和跳过均为零；这些重复验证不相加为 256 项不同测试\cite{install,checks}。本次文稿修订重新核对了 265 个文件与安装器哈希，并实际执行写作库健康检查及检索，没有重跑该历史 128 项回归。
 
-更新旧统一版时需要保留原整套模块及对应 manifest，再完整安装新版本。维护源和分发包承担不同责任：前者用于修改与构建，后者用于安装已确定的资源。不应递归搜集仓库中所有 SKILL.md 组成安装包，也不应从旧 lab-pro、labv3 或 vendor 目录拼接模块。
+更新旧统一版时需要保留原整套模块及对应 manifest，再完整安装新版本。维护源和分发包承担不同责任：前者用于修改与构建，后者用于安装已确定的资源。不应递归搜集仓库中所有 SKILL.md 组成安装包，也不应从其他版本或第三方目录拼接模块。
 
 \subsection{版本检查与协作行为试验}
 
@@ -468,27 +468,27 @@ w_j\lVert\boldsymbol z_i-\boldsymbol z_j\rVert_1,
 
 \section*{材料、版本与 AI 辅助说明}
 
-本文在 2026 年 9 月 7 日的《lab-Pro 整体设计论文》基础上修订，绑定 2026 年 9 月 10 日的 unified 发行资源。新增内容依据本地实现、归并记录、布局策略和作者提供的药材论文。外部参考网页在本次修订时重新查看，正文仅沿用相应的项目归因或规范来源。
+本文在 2026 年 9 月 7 日的前序整体设计论文基础上修订，绑定 2026 年 9 月 10 日的 unified 发行资源。新增内容依据本地实现、归并记录、布局策略和作者提供的药材论文。外部参考网页在此前正文修订时查看，正文仅沿用相应的项目归因或规范来源。
 
 本次由 AI 辅助编写和自校，使用 humanizer 整理表达，并进行 LaTeX 编译和页面检查。未启动独立审稿智能体；原设计论文的非作者审阅结论只对应原版本，不能移作本次独立审核。历史回归和案例记录均按其实际范围引用，本次没有新增竞赛性能实验或基础模型训练。
 
 \begin{thebibliography}{99}\small
 \bibitem{danus} frenzymath. Danus: Orchestrating Mathematical Reasoning Agents with Fact-Graph Memory[EB/OL]. GitHub，访问日期：2026-09-13. \url{https://github.com/frenzymath/Danus}.
 \bibitem{integration} 项目开发记录. Danus 思想融合 v1：实施与验证[R]. 2026-09-05. 见附录源材料索引。
-\bibitem{coordinator} Lab-ultra-unified 项目. Coordinator、Lightweight handoffs 与 Evidence relationships[CP]. 2026-09-10 发行资源。
-\bibitem{writing} Lab-ultra-unified 项目. 写作入口、通用技巧与结构化表达库[CP]. 2026-09-10 发行资源。
+\bibitem{coordinator} OhmyAIMCM 项目. Coordinator、Lightweight handoffs 与 Evidence relationships[CP]. 2026-09-10 发行资源。
+\bibitem{writing} OhmyAIMCM 项目. 写作入口、通用技巧与结构化表达库[CP]. 2026-09-10 发行资源。
 \bibitem{nist} NIST. Guide to the SI, Chapter 10: More on Printing and Using Symbols and Numbers in Scientific and Technical Documents[EB/OL]. 访问日期：2026-09-13. \url{https://www.nist.gov/pml/special-publication-811/nist-guide-si-chapter-10-more-printing-and-using-symbols-and-numbers}.
 \bibitem{physical} 项目开发记录. Physical scenes and paper diagram style[R]. 2026-09-07. 历史图形专项验证。
 \bibitem{nature} Nature. Preparing figures: our specifications[EB/OL]. 访问日期：2026-09-13. \url{https://research-figure-guide.nature.com/figures/preparing-figures-our-specifications/}.
-\bibitem{layout} Lab-ultra-unified 项目. Aesthetic profile policy[CP]. 2026-09-10 发行资源。
-\bibitem{install} 项目开发记录. Lab-ultra：最新完整安装[R]. 2026-09-10，第二次统一更新。
+\bibitem{layout} OhmyAIMCM 项目. Aesthetic profile policy[CP]. 2026-09-10 发行资源。
+\bibitem{install} 项目开发记录. 完整发行与安装核验[R]. 2026-09-10 统一记录及 2026-09-13 命名迁移核查。
 \bibitem{native} 项目开发记录. Native collaboration iteration 2: behavior and usable evidence bindings[R]. 2026-09-07. 合成行为试验。
 \bibitem{transfer} 项目开发记录. Writing transfer v3: fixed-fact comparisons[R]. 2026-09-07. 六案开发比较。
 \bibitem{fulltext} 项目开发记录. 全资料内容蒸馏：转换文本批次记录[R]. 2026-09-10. 完成范围为登记转换文本。
 \bibitem{api} 项目实现. Resumable, budget-reserved API distillation[CP]. \path{full-distillation/api_distill.py}，本次核对版本。
 \bibitem{unification} 项目开发记录. 全分析写作技巧统一吸收（第二轮）及 consolidation-summary[R/DS]. 2026-09-10.
-\bibitem{query} Lab-ultra-unified 项目. 条件写作技巧检索与 query\_variants.py[CP]. 2026-09-10 发行资源。
-\bibitem{conflicts} Lab-ultra-unified 项目. 跨来源写作经验的冲突裁决[CP]. 2026-09-10 发行资源。
+\bibitem{query} OhmyAIMCM 项目. 条件写作技巧检索与 query\_variants.py[CP]. 2026-09-10 发行资源。
+\bibitem{conflicts} OhmyAIMCM 项目. 跨来源写作经验的冲突裁决[CP]. 2026-09-10 发行资源。
 \bibitem{architecture} 项目设计记录. Architecture：Independent spaces、Style Atlas 与 Evidence-aware consensus v2.1[R]. 本次核对版本。
 \bibitem{layoutcal} 项目开发记录. 第二轮：64 篇正文论证与国赛优先布局蒸馏；国赛布局校准说明[R]. 2026-09-06 及发行资源。
 \bibitem{checks} 项目开发记录. skill-unification-002：bundle-check 与 installed-check[DS]. 2026-09-10.
@@ -519,28 +519,28 @@ w_j\lVert\boldsymbol z_i-\boldsymbol z_j\rVert_1,
 
 \section{使用入口与分发结构}
 
-项目名称与调用名称的对应关系见表\ref{tab:names}。开发仓库维护源、运行时发行目录和本文文稿目录分别保存，避免把介绍论文的修订误认为 Skill 程序更新。
+项目名称与调用名称的对应关系见表\ref{tab:names}。当前仓库在 skills 目录维护可安装资源，文稿位于 docs/design-paper。此次命名迁移同步更新模块元数据、交叉引用与安装清单，历史科学验证按原记录范围引用。
 
 \begin{table}[htbp]\centering\small
 \caption{名称与目录的责任。}\label{tab:names}
 \begin{tabularx}{\linewidth}{@{}p{30mm}Y@{}}\toprule
 对象 & 名称或责任\\\midrule
-对外项目 & \code{lab-ultra-unified}\\
-运行主入口 & \code{lab-ultra}\\
-同套子模块 & \code{lab-ultra-*}，共十九个\\
-维护源 & \path{experiments/cumcm-suite-2026-09-05/candidate/skills/}\\
-发行目录 & \code{lab-ultra-unified-20260910-r2}；含 installer、manifest 与 skills\\
+对外项目 & \code{OhmyAIMCM}\\
+运行主入口 & \code{OhmyAIMCM}\\
+同套子模块 & \code{OhmyAIMCM-*}，共十九个\\
+当前资源 & \path{skills/}\\
+发行目录 & \code{OhmyAIMCM-20260913}；含 installer、manifest 与 skills\\
 介绍与案例 & README、蒸馏说明、设计论文和药材案例；不计入 265 个 Skill 资源\\
 \bottomrule\end{tabularx}\end{table}
 
 在完整发行目录中，安装及验证命令如下；目标位置需使用客户端实际读取的 Skill 目录。已有同名模块应先完整备份，安装器不会合并覆盖。
 
 \begin{quote}\small\ttfamily
-python3 -B install\_lab.py install --bundle . --dest /target/skills\\
-python3 -B install\_lab.py verify --bundle . --dest /target/skills
+python3 -B install.py install --bundle . --dest /target/skills\\
+python3 -B install.py verify --bundle . --dest /target/skills
 \end{quote}
 
-在 \path{skills/lab-ultra-writing/} 中，可查询具体写作困难：
+在 \path{skills/OhmyAIMCM-writing/} 中，可查询具体写作困难：
 \begin{quote}\small\ttfamily
 python3 scripts/query\_variants.py query 搜索 --limit 3\\
 python3 scripts/query\_variants.py show variant-0039\\
@@ -554,7 +554,7 @@ python3 scripts/query\_variants.py health
 \begingroup\small
 \begin{longtable}{@{}>{\raggedright\arraybackslash}p{28mm}>{\raggedright\arraybackslash}p{123mm}@{}}
 \toprule 材料 & 项目内位置\\\midrule\endhead
-原设计论文 & \path{output/pdf/lab-pro-design/main.tex}\\[4pt]
+前序设计论文 & 见 \path{qa.json} 中的前序提交与来源哈希记录\\[4pt]
 架构与依赖 & \path{docs/architecture.md}；\path{layout-lab/pyproject.toml}\\[4pt]
 内容处理 & \path{experiments/writing-corpus-20260909/full-distillation/api_distill.py}\\[4pt]
 转换文本进度 & \path{experiments/writing-corpus-20260909/full-distillation/README.md}\\[4pt]
@@ -562,12 +562,12 @@ python3 scripts/query\_variants.py health
 发行与安装核验 & \path{experiments/writing-corpus-20260909/skill-unification-002/bundle-check.json}；同目录 \path{installed-check.json}\\[4pt]
 固定证据改稿 & \path{experiments/writing-corpus-20260909/skill-unification-002/forward-validation.md}\\[4pt]
 获奖稿专项审读 & \path{experiments/cumcm-suite-2026-09-05/audits/award-full-distillation-v2-20260906.md}\\[4pt]
-当前安装说明 & \path{experiments/cumcm-suite-2026-09-05/INSTALL-LAB-ULTRA.md}\\[4pt]
+当前安装说明 & 根目录 \path{README.md}、\path{install.py} 与 \path{manifest.json}\\[4pt]
 协作历史试验 & \path{experiments/cumcm-suite-2026-09-05/audits/native-collaboration-v2-20260907.md}\\[4pt]
 图形历史试验 & \path{experiments/cumcm-suite-2026-09-05/audits/physical-scenes-and-diagram-style-20260907.md}\\[4pt]
 融合与表达比较 & \path{experiments/cumcm-suite-2026-09-05/audits/danus-integration-v1-2026-09-05.md}；\path{experiments/cumcm-suite-2026-09-05/distillation/v3/writing-transfer/outcome.md}\\[4pt]
-写作规则 & \path{skills/lab-ultra-writing/references/exposition-cards.json}；同目录 \path{technique-variants.json} 与 \path{conflict-decisions.md}\\[4pt]
-版式策略 & \path{skills/lab-ultra-typesetter/references/aesthetic-policy.md}；同目录 \path{award-layout-calibration.md}\\[4pt]
+写作规则 & \path{skills/OhmyAIMCM-writing/references/exposition-cards.json}；同目录 \path{technique-variants.json} 与 \path{conflict-decisions.md}\\[4pt]
+版式策略 & \path{skills/OhmyAIMCM-typesetter/references/aesthetic-policy.md}；同目录 \path{award-layout-calibration.md}\\[4pt]
 \bottomrule\end{longtable}
 \endgroup
 

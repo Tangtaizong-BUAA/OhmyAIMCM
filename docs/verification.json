@@ -1,0 +1,12 @@
+{
+  "project": "OhmyAIMCM",
+  "date": "2026-09-13",
+  "readme_sha256": "61fd5b40d97fb1baeaa6f972cf9bf79f7119fe0ae9b9f595868a1425e73cd4b7",
+  "runtime_resources": 265,
+  "runtime_modules": 20,
+  "checked_local_links": 24,
+  "cross_module_links": 48,
+  "typesetter_regression_passed": 37,
+  "verification": "design-paper/qa.json",
+  "repository": "https://github.com/Tangtaizong-BUAA/OhmyAIMCM"
+}
