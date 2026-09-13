@@ -1,0 +1,41 @@
+{
+  "schema_version": 1,
+  "profiles": {
+    "science": {"upstream_id": "scienceplots", "files": ["scienceplots/science.mplstyle", "scienceplots/no-latex.mplstyle"]},
+    "nature": {"upstream_id": "scienceplots", "files": ["scienceplots/science.mplstyle", "scienceplots/no-latex.mplstyle", "scienceplots/nature.mplstyle"]},
+    "ieee": {"upstream_id": "scienceplots", "files": ["scienceplots/science.mplstyle", "scienceplots/no-latex.mplstyle", "scienceplots/ieee.mplstyle"]},
+    "cns": {
+      "upstream_id": "cnsplots",
+      "source": "src/cnsplots/_settings.py",
+      "files": [],
+      "rc": {
+        "font.family": "sans-serif",
+        "font.sans-serif": ["Helvetica", "Helvetica Neue", "Arial", "Nimbus Sans", "Liberation Sans", "DejaVu Sans"],
+        "font.size": 8,
+        "axes.labelsize": 8,
+        "axes.titlesize": 8,
+        "axes.titleweight": "bold",
+        "axes.linewidth": 0.5,
+        "axes.spines.top": false,
+        "axes.spines.right": false,
+        "axes.labelpad": 2,
+        "axes.titlepad": 4,
+        "xtick.labelsize": 7,
+        "ytick.labelsize": 7,
+        "legend.fontsize": 7,
+        "legend.frameon": false
+      }
+    }
+  },
+  "venue_widths": {
+    "icml2024-single": {"width_in": 3.25, "upstream_id": "tueplots", "function": "icml2024_half"},
+    "icml2024-full": {"width_in": 6.75, "upstream_id": "tueplots", "function": "icml2024_full"},
+    "neurips2024-full": {"width_in": 5.5, "upstream_id": "tueplots", "function": "neurips2024"},
+    "iclr2024-full": {"width_in": 5.5, "upstream_id": "tueplots", "function": "iclr2024"}
+  },
+  "colormaps": {
+    "batlow": {"upstream_id": "cmcrameri", "file": "cmcrameri/batlow.txt", "kind": "sequential"},
+    "vik": {"upstream_id": "cmcrameri", "file": "cmcrameri/vik.txt", "kind": "diverging"},
+    "romaO": {"upstream_id": "cmcrameri", "file": "cmcrameri/romaO.txt", "kind": "cyclic"}
+  }
+}

@@ -1,0 +1,4 @@
+interface:
+  display_name: "[Lab-ultra] cumcm-writing"
+  short_description: "Unified writing techniques with conditions and source fidelity."
+  default_prompt: "Use $lab-ultra-writing to write or revise this CUMCM paper while preserving its mathematics and evidence."

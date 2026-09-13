@@ -1,0 +1,235 @@
+{
+  "schema_version": "1.0.0",
+  "policy_type": "journal_semantic_layout_projection_v1",
+  "policy_id": "journal-dense-cn-v1",
+  "source_model_id": "b0f8ea212701bd7e266b0edc90d83c8b691ef774b814fca064326e1ee3ab2633",
+  "source_snapshot": {
+    "blocks_sha256": "58c636bb68bcba1b133d8ca06f52886771b32b8cd9e7de5b92974cc5eb0de801",
+    "pages_sha256": "78681e2a0114803ca1426c8ce1136b4819c80461474cf44bb09c9e95a8e70f5c"
+  },
+  "status": "validated_core_robust",
+  "runtime_export_eligible": true,
+  "fallback_profile": "balanced-cn",
+  "evidence": {
+    "selected_journal_documents": 752,
+    "selected_block_records": 9358,
+    "page_model_documents": 698,
+    "verified_publisher_final_documents": 21,
+    "owner_designated_top_journal_documents": 731,
+    "document_weighting": "one_vote_per_selected_paper"
+  },
+  "validation": {
+    "document_grouped_split_count": 5,
+    "passing_splits": 5,
+    "minimum_median_block_improvement_over_unconditional": 0.05274789,
+    "minimum_page_improvement_over_unconditional": 0.06002586,
+    "semantic_scope": "structure_role_only",
+    "higher_dimensional_refinement": "not_supported_after_within_paper_template_control"
+  },
+  "objective": {
+    "positive_standard": "selected_top_journal_corpus",
+    "projection": "restrained_high_density_quartile_inside_observed_journal_envelopes",
+    "human_judgement": "final_veto_only",
+    "claim_boundary": "corpus_defined_conditional_centre_not_causal_reader_preference"
+  },
+  "human_veto": {
+    "status": "accepted",
+    "review_scope": "single_blinded_whole_system_final_veto",
+    "training_eligible": false,
+    "pair_id": "frb-calibration-06",
+    "document_id": "frb-real-paper-v4",
+    "created_at": "2026-09-04T09:00:28.901534Z",
+    "decision": "left_better",
+    "strength": "clear",
+    "winning_side": "left",
+    "winning_role": "system-journal-dense-v1",
+    "rejected_role": "system-atlas-dense",
+    "accepted_policy_id": "journal-dense-cn-v1",
+    "accepted_runtime_profile_id": "journal-dense-cn-v1",
+    "left_candidate_id": "layout-577e30b71cc6",
+    "left_reviewed_assets_sha256": "27a2f41b18eac76a70d3f5d0de7b520fb0e97ecd7b5441f1fffbb437dc1a9268",
+    "left_pdf_sha256": "577e30b71cc6b787661454fccac59981002dc48909b15824d0037bca51a2b70e",
+    "right_candidate_id": "layout-3c3a462adfb5",
+    "right_reviewed_assets_sha256": "b4febfe6e11c459c9d458bd69e95ebd2872a8b2f2aee29037bf4d9b1900c3728",
+    "right_pdf_sha256": "3c3a462adfb58be6188078011c899ace6e0da9da69c204f69f5f55da1c44eb96",
+    "preference_record_sha256": "2331550bbfffd42f81162b16e54a99398bd10c121df94f28b040d7a970245718",
+    "final_veto_queue_sha256": "b3a21c72bef9fa9e0459e82ef0c919b0c8eb092e8af794d96e71eb7010316f21",
+    "blind_mapping_sha256": "18e173fbd5d847e5cc15bdda32d6d9680da596d53e780a8a1be4bd75c12140a9"
+  },
+  "transfer_ledger": [
+    {
+      "token": "body.leading_ratio",
+      "journal_anchor": 1.197825,
+      "journal_quantile": "q25_of_within_paper_medians",
+      "runtime_value": 1.25,
+      "decision": "projected_to_cumcm_readability_floor"
+    },
+    {
+      "token": "title.size_ratio",
+      "journal_anchor": 1.5999335,
+      "journal_quantile": "q25_of_within_paper_medians",
+      "runtime_value": 1.6,
+      "decision": "transferred"
+    },
+    {
+      "token": "headings.h1_size_ratio",
+      "journal_anchor": 1.0,
+      "journal_quantile": "q50_of_within_paper_medians",
+      "runtime_value": 1.2,
+      "decision": "projected_to_runtime_hierarchy_floor"
+    },
+    {
+      "token": "headings.h2_size_ratio",
+      "journal_anchor": 1.0,
+      "journal_quantile": "q50_of_within_paper_medians",
+      "runtime_value": 1.08,
+      "decision": "projected_to_runtime_hierarchy_floor"
+    },
+    {
+      "token": "headings.h1_before_em",
+      "journal_anchor": 1.1984,
+      "journal_quantile": "q25_of_within_paper_medians",
+      "runtime_value": 1.2,
+      "decision": "transferred"
+    },
+    {
+      "token": "headings.h1_after_em",
+      "journal_anchor": 0.329205,
+      "journal_quantile": "q25_of_within_paper_medians",
+      "runtime_value": 0.33,
+      "decision": "transferred"
+    },
+    {
+      "token": "headings.h2_before_em",
+      "journal_anchor": 1.14391625,
+      "journal_quantile": "q25_of_within_paper_medians",
+      "runtime_value": 1.14,
+      "decision": "transferred"
+    },
+    {
+      "token": "headings.h2_after_em",
+      "journal_anchor": 0.279789,
+      "journal_quantile": "q25_of_within_paper_medians",
+      "runtime_value": 0.28,
+      "decision": "transferred"
+    },
+    {
+      "token": "captions.font_size_ratio",
+      "journal_anchor": 0.800002,
+      "journal_quantile": "figure_caption_q25_of_within_paper_medians",
+      "runtime_value": 0.8,
+      "decision": "transferred"
+    },
+    {
+      "token": "math.display_above_em",
+      "journal_anchor": 0.619031,
+      "journal_quantile": "display_equation_gap_before_q25",
+      "runtime_value": 0.62,
+      "decision": "transferred"
+    },
+    {
+      "token": "math.display_below_em",
+      "journal_anchor": 0.0,
+      "journal_quantile": "display_equation_gap_after_q25",
+      "runtime_value": 0.3,
+      "decision": "projected_to_runtime_math_spacing_floor"
+    },
+    {
+      "token": "paragraphs.indent_em",
+      "journal_anchor": 0.0,
+      "journal_quantile": "q50_of_within_paper_medians",
+      "runtime_value": 2.0,
+      "decision": "rejected_for_transfer_chinese_paragraph_convention_overrides"
+    },
+    {
+      "token": "page.text_occupied_bbox_area_ratio",
+      "journal_anchor": 0.69654188,
+      "journal_quantile": "q75_of_within_paper_medians",
+      "runtime_value": null,
+      "decision": "quality_target_not_direct_style_token"
+    },
+    {
+      "token": "page.largest_text_vertical_gap_norm",
+      "journal_anchor": 0.03273175,
+      "journal_quantile": "q25_of_within_paper_medians",
+      "runtime_value": null,
+      "decision": "quality_target_not_direct_style_token"
+    }
+  ],
+  "runtime_projection": {
+    "profile_id": "journal-dense-cn-v1",
+    "style_tokens": {
+      "schema_version": "1.1.0",
+      "profile_id": "journal-dense-cn-v1",
+      "page": {
+        "margin_top_mm": 25.0,
+        "margin_bottom_mm": 25.0,
+        "margin_left_mm": 25.0,
+        "margin_right_mm": 25.0
+      },
+      "body": {
+        "font_size_pt": 10.5,
+        "leading_ratio": 1.25,
+        "cjk_font": "FandolSong-Regular.otf",
+        "latin_font": "texgyretermes-regular.otf",
+        "math_font": "texgyretermes-math.otf"
+      },
+      "title": {
+        "font_role": "sans",
+        "alignment": "centered",
+        "size_ratio": 1.6
+      },
+      "abstract": {
+        "heading_font_role": "sans",
+        "heading_alignment": "centered"
+      },
+      "headings": {
+        "h1_size_ratio": 1.2,
+        "h2_size_ratio": 1.08,
+        "h3_size_ratio": 1.0,
+        "h1_before_em": 1.2,
+        "h1_after_em": 0.33,
+        "h2_before_em": 1.14,
+        "h2_after_em": 0.28,
+        "h1_font_role": "sans",
+        "h1_alignment": "left_aligned",
+        "h2_font_role": "sans",
+        "h2_alignment": "left_aligned",
+        "numbering_style": "arabic"
+      },
+      "captions": {
+        "font_size_ratio": 0.8,
+        "figure_alignment": "centered",
+        "table_alignment": "left_aligned"
+      },
+      "math": {
+        "display_above_em": 0.62,
+        "display_below_em": 0.3,
+        "array_stretch": 1.12
+      },
+      "paragraphs": {
+        "indent_em": 2.0,
+        "paragraph_skip_em": 0.0,
+        "first_after_heading_indent": true
+      },
+      "flow": {
+        "widow_penalty": 10000,
+        "club_penalty": 10000,
+        "heading_keep_lines": 3
+      }
+    },
+    "quality_targets": {
+      "text_occupied_bbox_area_ratio": 0.69654188,
+      "largest_text_vertical_gap_norm": 0.03273175
+    }
+  },
+  "fallback_conditions": [
+    "policy_schema_or_status_invalid",
+    "human_veto_missing_or_invalid",
+    "annual_cumcm_rule_conflict",
+    "style_token_bound_violation",
+    "content_lock_failure",
+    "critical_layout_diagnostic",
+    "readability_or_overflow_failure"
+  ]
+}

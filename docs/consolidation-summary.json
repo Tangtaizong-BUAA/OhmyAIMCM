@@ -1,0 +1,19 @@
+{
+  "cards": 68,
+  "baseline_cards": 42,
+  "new_cards": 26,
+  "variants": 145,
+  "input_kinds": {
+    "move": 6230,
+    "extra": 38,
+    "manual": 8
+  },
+  "mapped_moves": 6168,
+  "excluded_moves": 62,
+  "mapped_total": 6214,
+  "excluded_total": 62,
+  "all_input_ids_dispositioned_once": true,
+  "all_source_documents_field_reviewed": 1585,
+  "reconciliation_is_native_model_review_not_human_review": true,
+  "original_corpus_complete": false
+}

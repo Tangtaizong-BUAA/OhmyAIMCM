@@ -1,0 +1,46 @@
+{
+  "schema_version": "1.0.0",
+  "ruleset_id": "cumcm-2026-electronic",
+  "verified_at": "2026-08-12T00:00:00-04:00",
+  "sources": [
+    {
+      "title": "全国大学生数学建模竞赛论文格式规范（2026年修订稿）",
+      "url": "https://www.mcm.edu.cn/html_cn/node/4cd596519c9eb9fbd866398f6df0caa3.html"
+    },
+    {
+      "title": "全国大学生数学建模竞赛参赛规则（2026年修订稿）",
+      "url": "https://www.mcm.edu.cn/html_cn/node/9d8e511fe7a1447b35f53a82c908e2e0.html"
+    },
+    {
+      "title": "全国大学生数学建模竞赛人工智能工具使用规定（2026年试行）",
+      "url": "https://www.mcm.edu.cn/html_cn/node/fef94648f2836ab6cc81586f4c38512b.html",
+      "effective_from": "2026-09-01"
+    }
+  ],
+  "hard_constraints": {
+    "paper_size": "A4",
+    "minimum_margin_mm": {
+      "top": 25,
+      "bottom": 25,
+      "left": 25,
+      "right": 25
+    },
+    "electronic_first_page": "abstract",
+    "include_commitment_page": false,
+    "include_numbering_page": false,
+    "abstract_max_pages": 1,
+    "abstract_max_pages_policy": "in_principle",
+    "table_of_contents_allowed": false,
+    "body_max_pages": 30,
+    "appendix_page_limit": null,
+    "paper_max_bytes": 20971520,
+    "anonymous": true
+  },
+  "ai_usage": {
+    "declaration_required": true,
+    "declaration_position": "before_references",
+    "auto_infer_state": false,
+    "used_requires_support_pdf": true,
+    "support_pdf_filename": "AI工具使用详情.pdf"
+  }
+}

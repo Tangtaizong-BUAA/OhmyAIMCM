@@ -1,0 +1,60 @@
+{
+  "schema_version": "1.1.0",
+  "profile_id": "hybrid-cn",
+  "page": {
+    "margin_top_mm": 25.0,
+    "margin_bottom_mm": 25.0,
+    "margin_left_mm": 25.0,
+    "margin_right_mm": 25.0
+  },
+  "body": {
+    "font_size_pt": 10.5,
+    "leading_ratio": 1.29,
+    "cjk_font": "FandolSong-Regular.otf",
+    "latin_font": "texgyretermes-regular.otf",
+    "math_font": "texgyretermes-math.otf"
+  },
+  "title": {
+    "font_role": "sans",
+    "alignment": "centered",
+    "size_ratio": 1.45
+  },
+  "abstract": {
+    "heading_font_role": "sans",
+    "heading_alignment": "centered"
+  },
+  "headings": {
+    "h1_size_ratio": 1.2,
+    "h2_size_ratio": 1.08,
+    "h3_size_ratio": 1.0,
+    "h1_before_em": 1.25,
+    "h1_after_em": 0.38,
+    "h2_before_em": 0.8,
+    "h2_after_em": 0.25,
+    "h1_font_role": "sans",
+    "h1_alignment": "left_aligned",
+    "h2_font_role": "sans",
+    "h2_alignment": "left_aligned",
+    "numbering_style": "arabic"
+  },
+  "captions": {
+    "font_size_ratio": 0.84,
+    "figure_alignment": "centered",
+    "table_alignment": "left_aligned"
+  },
+  "math": {
+    "display_above_em": 0.52,
+    "display_below_em": 0.44,
+    "array_stretch": 1.12
+  },
+  "paragraphs": {
+    "indent_em": 2.0,
+    "paragraph_skip_em": 0.0,
+    "first_after_heading_indent": true
+  },
+  "flow": {
+    "widow_penalty": 10000,
+    "club_penalty": 10000,
+    "heading_keep_lines": 3
+  }
+}

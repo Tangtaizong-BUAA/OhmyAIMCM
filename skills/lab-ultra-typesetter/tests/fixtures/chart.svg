@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="720" height="360" viewBox="0 0 720 360" role="img" aria-labelledby="title desc">
+  <title id="title">测试方案收益对比</title>
+  <desc id="desc">方案甲为三，方案乙为二。</desc>
+  <rect width="720" height="360" fill="#ffffff"/>
+  <line x1="90" y1="290" x2="660" y2="290" stroke="#334155" stroke-width="3"/>
+  <line x1="90" y1="55" x2="90" y2="290" stroke="#334155" stroke-width="3"/>
+  <rect x="190" y="95" width="130" height="195" fill="#2563eb"/>
+  <rect x="420" y="160" width="130" height="130" fill="#64748b"/>
+  <text x="255" y="325" text-anchor="middle" font-size="26" font-family="sans-serif" fill="#0f172a">方案甲</text>
+  <text x="485" y="325" text-anchor="middle" font-size="26" font-family="sans-serif" fill="#0f172a">方案乙</text>
+  <text x="255" y="82" text-anchor="middle" font-size="24" font-family="sans-serif" fill="#0f172a">3</text>
+  <text x="485" y="147" text-anchor="middle" font-size="24" font-family="sans-serif" fill="#0f172a">2</text>
+</svg>

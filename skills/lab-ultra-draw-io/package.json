@@ -1,0 +1,57 @@
+{
+  "name": "draw-io-skill",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Native draw.io skill assets with export helpers, SVG linting, and public documentation for Codex and Claude Code workflows.",
+  "license": "MIT",
+  "homepage": "https://sunwood-ai-labs.github.io/draw-io-skill/",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Sunwood-ai-labs/draw-io-skill.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Sunwood-ai-labs/draw-io-skill/issues"
+  },
+  "keywords": [
+    "claude-code",
+    "codex",
+    "diagrams",
+    "drawio",
+    "mxgraph",
+    "svg"
+  ],
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "check:node": "node --check scripts/check-drawio-svg-overlaps.mjs",
+    "check:export-node": "node --check scripts/export-drawio.mjs",
+    "check:border-fixture-node": "node --check scripts/verify-border-overlap-fixture.mjs",
+    "check:large-frame-border-fixture-node": "node --check scripts/verify-large-frame-border-overlap-fixture.mjs",
+    "check:shape-border-fixture-node": "node --check scripts/verify-shape-border-overlap-fixture.mjs",
+    "check:shape-text-overflow-fixture-node": "node --check scripts/verify-shape-text-overflow-fixture.mjs",
+    "check:text-cell-overflow-fixture-node": "node --check scripts/verify-text-cell-overflow-fixture.mjs",
+    "check:text-contrast-fixture-node": "node --check scripts/verify-text-contrast-fixture.mjs",
+    "check:text-emphasis-fixture-node": "node --check scripts/verify-text-emphasis-fixture.mjs",
+    "check:label-rect-fixture-node": "node --check scripts/verify-label-rect-fixture.mjs",
+    "check:fixture": "node scripts/check-drawio-svg-overlaps.mjs fixtures/basic/basic.drawio.svg",
+    "check:border-fixture": "node scripts/verify-border-overlap-fixture.mjs",
+    "check:large-frame-border-fixture": "node scripts/verify-large-frame-border-overlap-fixture.mjs",
+    "check:shape-border-fixture": "node scripts/verify-shape-border-overlap-fixture.mjs",
+    "check:shape-text-overflow-fixture": "node scripts/verify-shape-text-overflow-fixture.mjs",
+    "check:text-cell-overflow-fixture": "node scripts/verify-text-cell-overflow-fixture.mjs",
+    "check:text-contrast-fixture": "node scripts/verify-text-contrast-fixture.mjs",
+    "check:text-emphasis-fixture": "node scripts/verify-text-emphasis-fixture.mjs",
+    "check:label-rect-fixture": "node scripts/verify-label-rect-fixture.mjs",
+    "check:python": "uv run python -m py_compile scripts/find_aws_icon.py",
+    "check": "npm run check:node && npm run check:export-node && npm run check:border-fixture-node && npm run check:large-frame-border-fixture-node && npm run check:shape-border-fixture-node && npm run check:shape-text-overflow-fixture-node && npm run check:text-cell-overflow-fixture-node && npm run check:text-contrast-fixture-node && npm run check:text-emphasis-fixture-node && npm run check:label-rect-fixture-node && npm run check:fixture && npm run check:border-fixture && npm run check:large-frame-border-fixture && npm run check:shape-border-fixture && npm run check:shape-text-overflow-fixture && npm run check:text-cell-overflow-fixture && npm run check:text-contrast-fixture && npm run check:text-emphasis-fixture && npm run check:label-rect-fixture",
+    "docs:dev": "vitepress dev docs",
+    "docs:build": "vitepress build docs",
+    "docs:preview": "vitepress preview docs",
+    "verify": "npm run check && npm run check:python && npm run docs:build"
+  },
+  "devDependencies": {
+    "vitepress": "^1.6.4"
+  }
+}

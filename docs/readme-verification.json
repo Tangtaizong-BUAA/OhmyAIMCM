@@ -1,0 +1,57 @@
+{
+  "date": "2026-09-13",
+  "scope": "README authorship, references, copied runtime integrity and supplied PDF previews only",
+  "writing_skill": "humanizer 3.0.0; full prose review and final file mode",
+  "base_release": "lab-ultra-unified-20260910-r2",
+  "runtime_resources_verified": 265,
+  "runtime_hash_mismatches": [],
+  "installer_hash_matches": true,
+  "module_count": 20,
+  "writing_library_health": {
+    "message": "health ok",
+    "valid": true,
+    "variant_count": 145,
+    "parent_card_count": 68,
+    "unique_id_count": 145,
+    "scope": "Local structure and source links only; not a new semantic or scientific review."
+  },
+  "readme_example_variant": "variant-0039",
+  "local_links_checked": 21,
+  "broken_links": [],
+  "paper": {
+    "pages": 285,
+    "sha256": "85c52477e38115d6cf9539e1d1ba361164613ff90e700fb8df035b0315abb1aa",
+    "byte_identical_copy": true,
+    "visually_reviewed_pages": [
+      1,
+      10,
+      14
+    ],
+    "text_extraction": "Poppler pdftotext for pages 1-35; pypdf mapping unsuitable for CJK prose",
+    "full_paper_review": false,
+    "numerical_reproduction": false
+  },
+  "historical_128_regressions_rerun_this_turn": false,
+  "repository_license_selected": false,
+  "published": false,
+  "source_record_hashes": {
+    "docs/architecture.md": "19fd783c1702b678b6e347913062fae6c0d834a6f1c084c9020aa920a3bafe26",
+    "layout-lab/pyproject.toml": "fdf96dd9145c6dea29d6a0fd59fac6fa68130df439f479a9d91ec4d1e5f0dde0",
+    "experiments/cumcm-suite-2026-09-05/audits/award-full-distillation-v2-20260906.md": "7fb11825c8fdd20c883dd29c25ad1f505a7021dc2f320b2b065742dd90e9d29f",
+    "experiments/writing-corpus-20260909/full-distillation/README.md": "959f338ed727a69d7e0d2b189fe9bd4bfc04891fd3b549cbc4e2e37644045f78",
+    "experiments/writing-corpus-20260909/full-distillation/api_distill.py": "765f3305716a7ba1ba20a5eb57f2c7cb7395104e8a5c2e10b2cc4834300d0816",
+    "experiments/writing-corpus-20260909/skill-unification-002/README.md": "765ddcb3f370da17295afa6178b5f916b786bd2f9fa15940c39b52239b7548b5",
+    "experiments/writing-corpus-20260909/skill-unification-002/consolidation-summary.json": "f9611360ec7cbfcc9216de7b9e9535ebe6e4678f2c5bfe1aaca3b7f4b2c3341c",
+    "experiments/cumcm-suite-2026-09-05/INSTALL-LAB-ULTRA.md": "f598144d7c03e5451cdae03b6b77b13d94e4ad46830b28a65dacb912f11b8411"
+  },
+  "new_artifact_hashes": {
+    "README.md": "117de9225310b6d8ad23f061441bcdf06fde580d5af46ae8b9be04bd018f173f",
+    "docs/distillation.md": "0b79e5906b655f33b8ca853e1a091cdbd32071abf9d7c65184bfbb031eafc4bf",
+    "examples/herbal-drying/README.md": "ce9d0c922a34825d94343f6a20f77153137729cf44996218ffc1e0b5fcadac18",
+    "docs/consolidation-summary.json": "f9611360ec7cbfcc9216de7b9e9535ebe6e4678f2c5bfe1aaca3b7f4b2c3341c",
+    "examples/herbal-drying/paper-with-source.pdf": "85c52477e38115d6cf9539e1d1ba361164613ff90e700fb8df035b0315abb1aa",
+    "assets/paper-page-01.png": "7bae3a36fb539f81b3ee5b3fb8e075593c33cc38c1f342ed2eed62ddb4368b5e",
+    "assets/paper-page-10.png": "abebcaf711259054ddd0df1d4aa2f9db736720ec1686131e9b2409230b5b4776",
+    "assets/paper-page-14.png": "d469e5547add81d991c05073aadaa6166924bb3290204b0ce6d5f007fa541f45"
+  }
+}

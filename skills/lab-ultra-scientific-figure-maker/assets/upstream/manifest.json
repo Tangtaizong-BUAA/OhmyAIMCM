@@ -1,0 +1,160 @@
+{
+  "schema_version": 1,
+  "adopted_at": "2026-09-04",
+  "origins": [
+    {
+      "id": "scienceplots",
+      "url": "https://github.com/garrettj403/SciencePlots.git",
+      "commit": "b9b16959570bd2fbc9ff5118bacc423c3bddd592",
+      "local_path": "vendor/figure-upstreams/SciencePlots",
+      "license": "MIT"
+    },
+    {
+      "id": "tueplots",
+      "url": "https://github.com/pnkraemer/tueplots.git",
+      "commit": "ba2616bfa4ba538d5d27d494ee61f5f1242199e2",
+      "local_path": "vendor/figure-upstreams/tueplots",
+      "license": "MIT"
+    },
+    {
+      "id": "cnsplots",
+      "url": "https://github.com/faridrashidi/cnsplots.git",
+      "commit": "ac8e53a4996aa9d6a281484ababa8bcc90a876d3",
+      "local_path": "vendor/figure-upstreams/cnsplots",
+      "license": "BSD-3-Clause"
+    },
+    {
+      "id": "cmcrameri",
+      "url": "https://github.com/callumrollo/cmcrameri.git",
+      "commit": "78f02a088fa3c4fb4cb8aa92bd8e52389ab9d09a",
+      "local_path": "vendor/figure-upstreams/cmcrameri",
+      "license": "MIT"
+    }
+  ],
+  "files": [
+    {
+      "upstream_id": "scienceplots",
+      "source": "vendor/figure-upstreams/SciencePlots/src/scienceplots/styles/science.mplstyle",
+      "transformation": "verbatim_except_final_newline",
+      "sha256": "b7ab81c1d1bc762f389a0c50c895a3f6346cbb1dfce53778d6f443a319aa9fa1",
+      "source_sha256": {
+        "vendor/figure-upstreams/SciencePlots/src/scienceplots/styles/science.mplstyle": "b7ab81c1d1bc762f389a0c50c895a3f6346cbb1dfce53778d6f443a319aa9fa1"
+      },
+      "path": "assets/upstream/scienceplots/science.mplstyle"
+    },
+    {
+      "upstream_id": "scienceplots",
+      "source": "vendor/figure-upstreams/SciencePlots/src/scienceplots/styles/misc/no-latex.mplstyle",
+      "transformation": "verbatim_except_final_newline",
+      "sha256": "a2f7749add6d6e658891fa89eb51df2ab5758f35ab36be109495fae11ac0640b",
+      "source_sha256": {
+        "vendor/figure-upstreams/SciencePlots/src/scienceplots/styles/misc/no-latex.mplstyle": "a2f7749add6d6e658891fa89eb51df2ab5758f35ab36be109495fae11ac0640b"
+      },
+      "path": "assets/upstream/scienceplots/no-latex.mplstyle"
+    },
+    {
+      "upstream_id": "scienceplots",
+      "source": "vendor/figure-upstreams/SciencePlots/src/scienceplots/styles/journals/nature.mplstyle",
+      "transformation": "verbatim_except_final_newline",
+      "sha256": "1d39b7974b71da2b92349f7f95d2e17f94dc83b335a0e1c18dfab522b363b0e2",
+      "source_sha256": {
+        "vendor/figure-upstreams/SciencePlots/src/scienceplots/styles/journals/nature.mplstyle": "1d39b7974b71da2b92349f7f95d2e17f94dc83b335a0e1c18dfab522b363b0e2"
+      },
+      "path": "assets/upstream/scienceplots/nature.mplstyle"
+    },
+    {
+      "upstream_id": "scienceplots",
+      "source": "vendor/figure-upstreams/SciencePlots/src/scienceplots/styles/journals/ieee.mplstyle",
+      "transformation": "verbatim_except_final_newline",
+      "sha256": "36f0c2a97b0fc3d3867fd602a08413573ba0598310cea668779afa23a6f1044a",
+      "source_sha256": {
+        "vendor/figure-upstreams/SciencePlots/src/scienceplots/styles/journals/ieee.mplstyle": "36f0c2a97b0fc3d3867fd602a08413573ba0598310cea668779afa23a6f1044a"
+      },
+      "path": "assets/upstream/scienceplots/ieee.mplstyle"
+    },
+    {
+      "upstream_id": "scienceplots",
+      "source": "vendor/figure-upstreams/SciencePlots/LICENSE",
+      "transformation": "verbatim_except_final_newline",
+      "sha256": "4de09c0f16f7c911893099a61e35ac4450c01962bf9028f819e222dfad48d560",
+      "source_sha256": {
+        "vendor/figure-upstreams/SciencePlots/LICENSE": "9e5d935909270a14c3e9dc5ede0bcfc73a69fc3411f70ddd9e05065602a46cdb"
+      },
+      "path": "assets/upstream/scienceplots/LICENSE"
+    },
+    {
+      "upstream_id": "cmcrameri",
+      "source": "vendor/figure-upstreams/cmcrameri/cmcrameri/cmaps/batlow.txt",
+      "transformation": "verbatim_except_final_newline",
+      "sha256": "918dd393177e126685437f234f4c1f7c8a446437c1c68820f3bc1a8423e91bd1",
+      "source_sha256": {
+        "vendor/figure-upstreams/cmcrameri/cmcrameri/cmaps/batlow.txt": "918dd393177e126685437f234f4c1f7c8a446437c1c68820f3bc1a8423e91bd1"
+      },
+      "path": "assets/upstream/cmcrameri/batlow.txt"
+    },
+    {
+      "upstream_id": "cmcrameri",
+      "source": "vendor/figure-upstreams/cmcrameri/cmcrameri/cmaps/vik.txt",
+      "transformation": "verbatim_except_final_newline",
+      "sha256": "60c2abfbffdfd9e7567cfeea1387bfe270eb036efe7262fdd7bf713058bacae2",
+      "source_sha256": {
+        "vendor/figure-upstreams/cmcrameri/cmcrameri/cmaps/vik.txt": "60c2abfbffdfd9e7567cfeea1387bfe270eb036efe7262fdd7bf713058bacae2"
+      },
+      "path": "assets/upstream/cmcrameri/vik.txt"
+    },
+    {
+      "upstream_id": "cmcrameri",
+      "source": "vendor/figure-upstreams/cmcrameri/cmcrameri/cmaps/romaO.txt",
+      "transformation": "verbatim_except_final_newline",
+      "sha256": "5946167e7ce80161f7f12c7ceae34730e06c42a31fa0000057b2bd785c04c74a",
+      "source_sha256": {
+        "vendor/figure-upstreams/cmcrameri/cmcrameri/cmaps/romaO.txt": "5946167e7ce80161f7f12c7ceae34730e06c42a31fa0000057b2bd785c04c74a"
+      },
+      "path": "assets/upstream/cmcrameri/romaO.txt"
+    },
+    {
+      "upstream_id": "cmcrameri",
+      "source": "vendor/figure-upstreams/cmcrameri/LICENSE.txt",
+      "transformation": "verbatim_except_final_newline",
+      "sha256": "f8ccecbeb9687f6b09a2cb13f12521c067ccb111280d1ea632c9500131b83e3b",
+      "source_sha256": {
+        "vendor/figure-upstreams/cmcrameri/LICENSE.txt": "f8ccecbeb9687f6b09a2cb13f12521c067ccb111280d1ea632c9500131b83e3b"
+      },
+      "path": "assets/upstream/cmcrameri/LICENSE.txt"
+    },
+    {
+      "upstream_id": "cnsplots",
+      "source": "vendor/figure-upstreams/cnsplots/LICENSE.md",
+      "transformation": "verbatim_except_final_newline",
+      "sha256": "76057e12a35c30d62a937e5f480bb5510b7f1e5ba5708e9879d032a3ed2dbb76",
+      "source_sha256": {
+        "vendor/figure-upstreams/cnsplots/LICENSE.md": "76057e12a35c30d62a937e5f480bb5510b7f1e5ba5708e9879d032a3ed2dbb76"
+      },
+      "path": "assets/upstream/cnsplots/LICENSE.md"
+    },
+    {
+      "upstream_id": "tueplots",
+      "source": "vendor/figure-upstreams/tueplots/LICENSE",
+      "transformation": "verbatim_except_final_newline",
+      "sha256": "aa1e84663c4133bb15a41f64b1e5a21c9a54693f995384fb0214c847cea23a3d",
+      "source_sha256": {
+        "vendor/figure-upstreams/tueplots/LICENSE": "aa1e84663c4133bb15a41f64b1e5a21c9a54693f995384fb0214c847cea23a3d"
+      },
+      "path": "assets/upstream/tueplots/LICENSE"
+    },
+    {
+      "upstream_id": "cnsplots+tueplots",
+      "source": [
+        "vendor/figure-upstreams/cnsplots/src/cnsplots/_settings.py",
+        "vendor/figure-upstreams/tueplots/tueplots/figsizes.py"
+      ],
+      "transformation": "selected_typography_and_dated_widths_plus_local_profile_routing",
+      "sha256": "0147ce4df91524e74760996326b25dddc3eff0fc75fa8c77c73d4dcccb6326a3",
+      "source_sha256": {
+        "vendor/figure-upstreams/cnsplots/src/cnsplots/_settings.py": "26d770f153acd7537bdcf87730739a9cb002c3c2f068b79b5933f1f05941a6a1",
+        "vendor/figure-upstreams/tueplots/tueplots/figsizes.py": "7f38655119f3f635b17033cecc0361a40c4c42f59414e730a2a5a4b2fa69560b"
+      },
+      "path": "assets/style-profiles.json"
+    }
+  ]
+}

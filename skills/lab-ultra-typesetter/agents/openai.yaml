@@ -1,0 +1,4 @@
+interface:
+  display_name: "[Lab-ultra] cumcm-typesetter"
+  short_description: "将成稿 Markdown 排成可编辑、可审计的国赛 LaTeX 与 PDF"
+  default_prompt: "Use $lab-ultra-typesetter to typeset this completed CUMCM Markdown paper without changing its academic content."

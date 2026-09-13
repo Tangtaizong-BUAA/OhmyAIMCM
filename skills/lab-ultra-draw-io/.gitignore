@@ -1,0 +1,13 @@
+.DS_Store
+Thumbs.db
+node_modules/
+docs/node_modules/
+dist/
+docs/.vitepress/cache/
+docs/.vitepress/dist/
+__pycache__/
+*.pyc
+*.pyo
+*.swp
+*.tmp
+*.bak

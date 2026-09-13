@@ -1,0 +1,16 @@
+{
+  "date": "2026-09-13",
+  "supersedes_readme_hash_in": "readme-verification.json (preserved historical snapshot)",
+  "readme_sha256": "dfac597a052662a48779ac5723d602a0d29fb8ecbc7478e427c418c01418cb27",
+  "design_paper_sha256": "6c8393ee300d8e656452fce65777a26879bc841c48029f8e0774ce15387d4d19",
+  "local_links_checked": 29,
+  "broken_links": [],
+  "runtime_resources_verified": 265,
+  "runtime_hash_mismatches": [],
+  "published": false,
+  "contributors_added": [
+    "Tangtaizong-BUAA",
+    "1923870998-create"
+  ],
+  "contributor_listing_sha256": "350323627423ee0209f91c708e664f193669524cf5789365249b19f29f9493d1"
+}

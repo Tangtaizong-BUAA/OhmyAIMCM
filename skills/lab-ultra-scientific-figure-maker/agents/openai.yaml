@@ -1,0 +1,4 @@
+interface:
+  display_name: "[Lab-ultra] scientific-figure-maker"
+  short_description: "Create plots, physical scenes and image-assisted mechanisms"
+  default_prompt: "Use $lab-ultra-scientific-figure-maker to explain my scientific model with a truthful figure; choose native rendering or grounded image refinement and return the appropriate sources and review."

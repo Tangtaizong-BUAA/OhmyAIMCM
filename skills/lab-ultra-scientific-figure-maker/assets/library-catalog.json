@@ -1,0 +1,557 @@
+{
+  "schema_version": 1,
+  "libraries": [
+    {
+      "id": "scienceplots",
+      "adoption": "bundled_style",
+      "ecosystem": "python",
+      "tags": [
+        "publication_style"
+      ],
+      "entrypoints": [
+        "src/scienceplots/styles/science.mplstyle",
+        "examples/plot-examples.py"
+      ],
+      "note": "Line and tick styling; omit automatic TeX and tight cropping.",
+      "origin": {
+        "url": "https://github.com/garrettj403/SciencePlots.git",
+        "commit": "b9b16959570bd2fbc9ff5118bacc423c3bddd592",
+        "local_path": "vendor/figure-upstreams/SciencePlots",
+        "license": "MIT"
+      }
+    },
+    {
+      "id": "tueplots",
+      "adoption": "bundled_dimensions",
+      "ecosystem": "python",
+      "tags": [
+        "venue_dimensions"
+      ],
+      "entrypoints": [
+        "tueplots/figsizes.py"
+      ],
+      "note": "Dated venue dimensions; explicit manuscript size takes precedence.",
+      "origin": {
+        "url": "https://github.com/pnkraemer/tueplots.git",
+        "commit": "ba2616bfa4ba538d5d27d494ee61f5f1242199e2",
+        "local_path": "vendor/figure-upstreams/tueplots",
+        "license": "MIT"
+      }
+    },
+    {
+      "id": "scientific-visualization-book",
+      "adoption": "reference_recipe",
+      "ecosystem": "python",
+      "tags": [
+        "design_examples",
+        "multi_panel",
+        "typography"
+      ],
+      "entrypoints": [
+        "code/showcases",
+        "code/layout",
+        "LICENSE.txt"
+      ],
+      "note": "Use code recipes under BSD; book prose and illustrations have separate NC/SA terms.",
+      "origin": {
+        "url": "https://github.com/rougier/scientific-visualization-book.git",
+        "commit": "62fa569f30333c817c13e4dc757877c1192fd15a",
+        "local_path": "vendor/figure-upstreams/scientific-visualization-book",
+        "license": "mixed_CC-BY-NC-SA-4.0_book_and_BSD-2-Clause_code"
+      }
+    },
+    {
+      "id": "cnsplots",
+      "adoption": "bundled_style",
+      "ecosystem": "python",
+      "tags": [
+        "publication_style",
+        "annotations"
+      ],
+      "entrypoints": [
+        "src/cnsplots/_settings.py",
+        "examples"
+      ],
+      "note": "CNS typography only; pixel canvas, global setup and automatic statistics are not defaults.",
+      "origin": {
+        "url": "https://github.com/faridrashidi/cnsplots.git",
+        "commit": "ac8e53a4996aa9d6a281484ababa8bcc90a876d3",
+        "local_path": "vendor/figure-upstreams/cnsplots",
+        "license": "BSD-3-Clause"
+      }
+    },
+    {
+      "id": "marsilea",
+      "adoption": "reference_recipe",
+      "ecosystem": "python",
+      "tags": [
+        "heatmap",
+        "multi_panel",
+        "dendrogram"
+      ],
+      "entrypoints": [
+        "docs/examples/Gallery",
+        "docs/examples/Plotters"
+      ],
+      "note": "Preferred Python annotated heatmap and composition recipes; keep one layout owner.",
+      "origin": {
+        "url": "https://github.com/Marsilea-viz/marsilea.git",
+        "commit": "05620dbe94415dddf3cc8d4abf7e4408deadbbe2",
+        "local_path": "vendor/figure-upstreams/marsilea",
+        "license": "MIT"
+      }
+    },
+    {
+      "id": "cmcrameri",
+      "adoption": "bundled_colormap",
+      "ecosystem": "python",
+      "tags": [
+        "sequential_color",
+        "diverging_color",
+        "cyclic_color"
+      ],
+      "entrypoints": [
+        "cmcrameri/cmaps",
+        "LICENSE.txt"
+      ],
+      "note": "Select palette family by variable meaning; retain RGB lookup tables.",
+      "origin": {
+        "url": "https://github.com/callumrollo/cmcrameri.git",
+        "commit": "78f02a088fa3c4fb4cb8aa92bd8e52389ab9d09a",
+        "local_path": "vendor/figure-upstreams/cmcrameri",
+        "license": "MIT"
+      }
+    },
+    {
+      "id": "vega-lite",
+      "adoption": "optional_backend",
+      "ecosystem": "javascript",
+      "tags": [
+        "declarative_chart",
+        "interactive"
+      ],
+      "entrypoints": [
+        "examples/specs",
+        "site/tutorials/getting_started.md"
+      ],
+      "note": "Web declarative chart recipes; export settings remain owned by the figure request.",
+      "origin": {
+        "url": "https://github.com/vega/vega-lite.git",
+        "commit": "b4b2594f5c8261aec1be353fbf4f5049f953d5a7",
+        "local_path": "vendor/figure-upstreams/vega-lite",
+        "license": "BSD-3-Clause"
+      }
+    },
+    {
+      "id": "upsetplot",
+      "adoption": "reference_recipe",
+      "ecosystem": "python",
+      "tags": [
+        "set_intersection"
+      ],
+      "entrypoints": [
+        "examples/plot_sizing.py",
+        "README.rst"
+      ],
+      "note": "Show set cardinalities and inclusive/exclusive semantics explicitly.",
+      "origin": {
+        "url": "https://github.com/jnothman/UpSetPlot.git",
+        "commit": "dcfadae04edfffe321fc0b002bf1865019f75f9b",
+        "local_path": "vendor/figure-upstreams/UpSetPlot",
+        "license": "BSD-3-Clause"
+      }
+    },
+    {
+      "id": "pycirclize",
+      "adoption": "reference_recipe",
+      "ecosystem": "python",
+      "tags": [
+        "circular",
+        "chord",
+        "genomics"
+      ],
+      "entrypoints": [
+        "docs/circos_plot.ipynb",
+        "docs/chord_diagram.ipynb"
+      ],
+      "note": "Use only when circular topology is meaningful; preserve numeric scales.",
+      "origin": {
+        "url": "https://github.com/moshi4/pyCirclize.git",
+        "commit": "5a0f36111a4bbfab3e3d765e7365a1108f891dcb",
+        "local_path": "vendor/figure-upstreams/pyCirclize",
+        "license": "MIT"
+      }
+    },
+    {
+      "id": "ptitprince",
+      "adoption": "reference_recipe",
+      "ecosystem": "python",
+      "tags": [
+        "raincloud",
+        "distribution"
+      ],
+      "entrypoints": [
+        "tutorial_python/raincloud_tutorial_python.ipynb"
+      ],
+      "note": "Show raw observations; disclose KDE bandwidth and seed for jitter.",
+      "origin": {
+        "url": "https://github.com/pog87/PtitPrince.git",
+        "commit": "7192fabd6dffd45399b0e1149360e36884f71caa",
+        "local_path": "vendor/figure-upstreams/PtitPrince",
+        "license": "MIT"
+      }
+    },
+    {
+      "id": "forestplot",
+      "adoption": "reference_recipe",
+      "ecosystem": "python",
+      "tags": [
+        "forest",
+        "effect_size",
+        "interval"
+      ],
+      "entrypoints": [
+        "examples/subplot_example.py",
+        "examples/readme-examples.ipynb"
+      ],
+      "note": "Intervals and effect estimates must come from supplied analysis.",
+      "origin": {
+        "url": "https://github.com/LSYS/forestplot.git",
+        "commit": "b7591e3be7004f9962fd7cd7f91aa4cac91c45fc",
+        "local_path": "vendor/figure-upstreams/forestplot",
+        "license": "MIT"
+      }
+    },
+    {
+      "id": "statannotations",
+      "adoption": "reference_recipe",
+      "ecosystem": "python",
+      "tags": [
+        "significance",
+        "annotations"
+      ],
+      "entrypoints": [
+        "README.md",
+        "statannotations"
+      ],
+      "note": "Render declared tests and adjusted p-values; do not select tests for a desired star count.",
+      "origin": {
+        "url": "https://github.com/trevismd/statannotations.git",
+        "commit": "3f020ae631ca88a091b6ee3e9a9fd32158920879",
+        "local_path": "vendor/figure-upstreams/statannotations",
+        "license": "MIT"
+      }
+    },
+    {
+      "id": "adjusttext",
+      "adoption": "reference_recipe",
+      "ecosystem": "python",
+      "tags": [
+        "label_collision",
+        "annotations"
+      ],
+      "entrypoints": [
+        "README.md",
+        "adjustText"
+      ],
+      "note": "Use fixed RNG seed and iteration budget; never move data points to resolve labels.",
+      "origin": {
+        "url": "https://github.com/Phlya/adjustText.git",
+        "commit": "92b0397b5de118151b788d5fb35aa7272f32c0ce",
+        "local_path": "vendor/figure-upstreams/adjustText",
+        "license": "MIT"
+      }
+    },
+    {
+      "id": "svg-utils",
+      "adoption": "reference_recipe",
+      "ecosystem": "python",
+      "tags": [
+        "svg_composition",
+        "multi_panel"
+      ],
+      "entrypoints": [
+        "examples/compose_example.py",
+        "docs/source/tutorials/composing_multipanel_figures.rst"
+      ],
+      "note": "Compose mixed SVG panels without rasterizing labels; check final physical size.",
+      "origin": {
+        "url": "https://github.com/btel/svg_utils.git",
+        "commit": "5b3e09008181965e3b8b168f4dcda39e8722c568",
+        "local_path": "vendor/figure-upstreams/svg_utils",
+        "license": "MIT"
+      }
+    },
+    {
+      "id": "pylustrator",
+      "adoption": "optional_backend",
+      "ecosystem": "python",
+      "tags": [
+        "interactive_edit",
+        "multi_panel"
+      ],
+      "entrypoints": [
+        "README.md"
+      ],
+      "note": "Opt-in GUI editing with generated source; retain source changes and review GPL before redistribution.",
+      "origin": {
+        "url": "https://github.com/rgerum/pylustrator.git",
+        "commit": "b0341ee96cd3d11aab62e444ad6bf8b0abb83ce2",
+        "local_path": "vendor/figure-upstreams/pylustrator",
+        "license": "GPL-3.0-only"
+      }
+    },
+    {
+      "id": "tikzplotlib",
+      "adoption": "optional_backend",
+      "ecosystem": "python",
+      "tags": [
+        "tikz_export"
+      ],
+      "entrypoints": [
+        "README.md"
+      ],
+      "note": "Legacy converter; verify compatibility with actual Matplotlib before choosing it.",
+      "origin": {
+        "url": "https://github.com/nschloe/tikzplotlib.git",
+        "commit": "450712b4014799ec5f151f234df84335c90f4b9d",
+        "local_path": "vendor/figure-upstreams/tikzplotlib",
+        "license": "MIT"
+      }
+    },
+    {
+      "id": "pgfplots",
+      "adoption": "reference_recipe",
+      "ecosystem": "tex",
+      "tags": [
+        "native_tex",
+        "data_plot"
+      ],
+      "entrypoints": [
+        "doc/latex/pgfplots/pgfplots.tutorial1.tex",
+        "README.md"
+      ],
+      "note": "Use for an explicitly requested TeX source; compilation uses a detected local TeX runtime.",
+      "origin": {
+        "url": "https://github.com/pgf-tikz/pgfplots.git",
+        "commit": "80c5c7cf40257258bd03c69a77cd46adbf05e028",
+        "local_path": "vendor/figure-upstreams/pgfplots",
+        "license": "GPL-3.0-or-later"
+      }
+    },
+    {
+      "id": "flint-chart",
+      "adoption": "optional_backend",
+      "ecosystem": "javascript",
+      "tags": [
+        "agent_ir",
+        "multi_renderer"
+      ],
+      "entrypoints": [
+        "README.md",
+        "docs"
+      ],
+      "note": "Optional IR adapter reference; keep local FigureIR as the outer scientific contract.",
+      "origin": {
+        "url": "https://github.com/microsoft/flint-chart.git",
+        "commit": "34ef4516554b323a740a426bd1a1e6ba31ee8245",
+        "local_path": "vendor/figure-upstreams/flint-chart",
+        "license": "MIT"
+      }
+    },
+    {
+      "id": "data-formulator",
+      "adoption": "optional_backend",
+      "ecosystem": "python-javascript",
+      "tags": [
+        "ai_authoring",
+        "data_transform"
+      ],
+      "entrypoints": [
+        "README.md"
+      ],
+      "note": "Opt-in authoring system; preserve every generated transform for review.",
+      "origin": {
+        "url": "https://github.com/microsoft/data-formulator.git",
+        "commit": "5477f0e236426dc8f74a498ec400414fba7fbc0f",
+        "local_path": "vendor/figure-upstreams/data-formulator",
+        "license": "MIT"
+      }
+    },
+    {
+      "id": "autofigure-edit",
+      "adoption": "optional_backend",
+      "ecosystem": "python",
+      "tags": [
+        "illustration_edit",
+        "method_diagram"
+      ],
+      "entrypoints": [
+        "README_ZH.md",
+        "README.md"
+      ],
+      "note": "Concept-illustration research; generated relationships and labels need editable reconstruction and review.",
+      "origin": {
+        "url": "https://github.com/ResearAI/AutoFigure-Edit.git",
+        "commit": "16f3749e9d512bdf7b7b55c162307bc289750b7a",
+        "local_path": "vendor/figure-upstreams/AutoFigure-Edit",
+        "license": "MIT"
+      }
+    },
+    {
+      "id": "detikzify",
+      "adoption": "optional_backend",
+      "ecosystem": "python",
+      "tags": [
+        "image_to_tikz",
+        "method_diagram"
+      ],
+      "entrypoints": [
+        "README.md",
+        "examples"
+      ],
+      "note": "Image-to-TikZ experiment; inferred geometry is not recovered scientific data.",
+      "origin": {
+        "url": "https://github.com/potamides/DeTikZify.git",
+        "commit": "87fa5fa6812058fe1aaabc90aecbaf26bf9db010",
+        "local_path": "vendor/figure-upstreams/DeTikZify",
+        "license": "Apache-2.0"
+      }
+    },
+    {
+      "id": "patchwork",
+      "adoption": "reference_recipe",
+      "ecosystem": "r",
+      "tags": [
+        "multi_panel"
+      ],
+      "entrypoints": [
+        "vignettes/guides/assembly.Rmd",
+        "vignettes/guides/annotation.Rmd"
+      ],
+      "note": "Preferred ggplot composition; avoid mixing independent layout engines.",
+      "origin": {
+        "url": "https://github.com/thomasp85/patchwork.git",
+        "commit": "6b1d88ce1da1c5cae3818d984edf80dc0bb3de8c",
+        "local_path": "vendor/figure-upstreams/patchwork",
+        "license": "MIT"
+      }
+    },
+    {
+      "id": "ggsci",
+      "adoption": "reference_recipe",
+      "ecosystem": "r",
+      "tags": [
+        "categorical_color"
+      ],
+      "entrypoints": [
+        "vignettes/ggsci.Rmd"
+      ],
+      "note": "Journal-inspired palettes are visual suggestions, not journal requirements.",
+      "origin": {
+        "url": "https://github.com/nanxstats/ggsci.git",
+        "commit": "37b74f85e62680b9d4523b0b4c0d9bfa0403d299",
+        "local_path": "vendor/figure-upstreams/ggsci",
+        "license": "GPL-3.0-or-later"
+      }
+    },
+    {
+      "id": "complexheatmap",
+      "adoption": "reference_recipe",
+      "ecosystem": "r",
+      "tags": [
+        "heatmap",
+        "multi_panel",
+        "dendrogram"
+      ],
+      "entrypoints": [
+        "vignettes/complex_heatmap.rmd",
+        "README.md"
+      ],
+      "note": "Preferred R annotated heatmaps; share color normalization across comparable panels.",
+      "origin": {
+        "url": "https://github.com/jokergoo/ComplexHeatmap.git",
+        "commit": "ad11b26afe8c63dc05b20035503352ca740f602e",
+        "local_path": "vendor/figure-upstreams/ComplexHeatmap",
+        "license": "MIT"
+      }
+    },
+    {
+      "id": "ggrepel",
+      "adoption": "reference_recipe",
+      "ecosystem": "r",
+      "tags": [
+        "label_collision",
+        "annotations"
+      ],
+      "entrypoints": [
+        "vignettes/ggrepel.Rmd"
+      ],
+      "note": "Fix seed and iteration budget; resolve text positions only.",
+      "origin": {
+        "url": "https://github.com/slowkow/ggrepel.git",
+        "commit": "458aa50c14c2d4df8792fff1478aca1ba3b3615f",
+        "local_path": "vendor/figure-upstreams/ggrepel",
+        "license": "GPL-3.0-only"
+      }
+    },
+    {
+      "id": "matlab2tikz",
+      "adoption": "optional_backend",
+      "ecosystem": "matlab",
+      "tags": [
+        "tikz_export"
+      ],
+      "entrypoints": [
+        "test/examples/example_bar_plot.m",
+        "README.md"
+      ],
+      "note": "Legacy MATLAB-to-TikZ export; smoke-test on the installed MATLAB/TeX combination.",
+      "origin": {
+        "url": "https://github.com/matlab2tikz/matlab2tikz.git",
+        "commit": "806c97d99f87f8a1e99a7c54e853c25c82aac301",
+        "local_path": "vendor/figure-upstreams/matlab2tikz",
+        "license": "BSD-2-Clause"
+      }
+    },
+    {
+      "id": "export-fig",
+      "adoption": "optional_backend",
+      "ecosystem": "matlab",
+      "tags": [
+        "figure_export"
+      ],
+      "entrypoints": [
+        "README.md"
+      ],
+      "note": "Use for MATLAB figures only; explicit export dimensions and dependencies.",
+      "origin": {
+        "url": "https://github.com/altmany/export_fig.git",
+        "commit": "5c73efc7154ee00f242481305cb3b2e121480614",
+        "local_path": "vendor/figure-upstreams/export_fig",
+        "license": "BSD-3-Clause"
+      }
+    },
+    {
+      "id": "gramm",
+      "adoption": "reference_recipe",
+      "ecosystem": "matlab",
+      "tags": [
+        "statistical_plot",
+        "distribution",
+        "faceting"
+      ],
+      "entrypoints": [
+        "gramm/examples/example_base_1d_distributions.m",
+        "README.md"
+      ],
+      "note": "MATLAB statistical recipes; keep estimators explicit and preserve raw samples.",
+      "origin": {
+        "url": "https://github.com/piermorel/gramm.git",
+        "commit": "f140e680997be2601a43722baf07661a1180d60b",
+        "local_path": "vendor/figure-upstreams/gramm",
+        "license": "MIT"
+      }
+    }
+  ]
+}
