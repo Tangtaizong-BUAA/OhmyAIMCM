@@ -1,4 +1,6 @@
-# Lab-ultra-unified 整体设计论文
+# OhMyAIMCM 系统设计论文
+
+本文以项目原名 Lab-ultra-unified 撰写。项目现名为 OhMyAIMCM，论文的版本标识、引用与核查记录保留修订时的信息。
 
 [阅读论文](Lab-ultra-unified-整体设计论文.pdf) · [LaTeX 源码](main.tex) · [修订说明](REVISION.md) · [核查记录](qa.json)
 
