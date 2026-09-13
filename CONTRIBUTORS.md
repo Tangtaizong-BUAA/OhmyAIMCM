@@ -1,4 +1,4 @@
-# OhMyAIMCM Contributors
+# OhmyAIMCM Contributors
 
 本项目由以下两位贡献者共同署名：
 
