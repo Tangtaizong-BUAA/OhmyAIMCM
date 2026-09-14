@@ -1,12 +1,28 @@
 {
   "project": "OhmyAIMCM",
   "date": "2026-09-13",
-  "readme_sha256": "61fd5b40d97fb1baeaa6f972cf9bf79f7119fe0ae9b9f595868a1425e73cd4b7",
+  "readme_sha256": "71c9fb042ab1ce278fe0feb1706f49e66c975164aeed6070832241e344fe7ab4",
   "runtime_resources": 265,
   "runtime_modules": 20,
-  "checked_local_links": 24,
+  "checked_local_links": 20,
   "cross_module_links": 48,
   "typesetter_regression_passed": 37,
   "verification": "design-paper/qa.json",
-  "repository": "https://github.com/Tangtaizong-BUAA/OhmyAIMCM"
+  "repository": "https://github.com/Tangtaizong-BUAA/OhmyAIMCM",
+  "prior_readme_verification": {
+    "readme_sha256": "61fd5b40d97fb1baeaa6f972cf9bf79f7119fe0ae9b9f595868a1425e73cd4b7",
+    "checked_local_links": 24
+  },
+  "documentation_revision": {
+    "scope": [
+      "README.md",
+      "docs/scientific-agentic-os.md"
+    ],
+    "architecture_doc_sha256": "68b418c64aee3a85c7f89cc5c5eaa441abce4a9f9f08a8827516fb0cfb58fc9e",
+    "architecture_doc_local_links": 15,
+    "link_check_scope": "Local Markdown and HTML file targets; network and heading-anchor checks excluded",
+    "review": "Author self-review against shipped coordinator, evidence-map source, figure contract, typesetter, compute and writing documentation",
+    "benchmark_status": "Proposed evaluation only; no new performance experiment",
+    "runtime_regressions": "Historical values above retained; not rerun for documentation-only edits"
+  }
 }
