@@ -1,7 +1,7 @@
 {
   "project": "OhmyAIMCM",
   "date": "2026-09-13",
-  "readme_sha256": "173507eaee91e2a12bb66fd513bb9a38a6c83124732521c765f003fc37ee2e27",
+  "readme_sha256": "4d585a6867ea6614eace01e6c2487f4c81962ca4e897f187196488b9597b508a",
   "runtime_resources": 265,
   "runtime_modules": 20,
   "checked_local_links": 21,
@@ -26,9 +26,19 @@
     "runtime_regressions": "Historical values above retained; not rerun for documentation-only edits"
   },
   "license_revision": {
-    "spdx": "Apache-2.0",
-    "source": "https://www.apache.org/licenses/LICENSE-2.0.txt",
-    "sha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30",
-    "scope": "Root license and README notice; existing third-party license files unchanged"
-  }
+    "spdx": "GPL-3.0-only",
+    "source": "https://www.gnu.org/licenses/gpl-3.0.txt",
+    "sha256": "3972dc9744f6499f0f9b2dbf76696f2ae7ad8af9b23dde66d6af86c9dfb36986",
+    "scope": "Current root license and README notice; third-party licenses retained; prior Apache-2.0 grant not revoked"
+  },
+  "license_history": [
+    {
+      "spdx": "Apache-2.0",
+      "source": "https://www.apache.org/licenses/LICENSE-2.0.txt",
+      "sha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30",
+      "scope": "Root license and README notice; existing third-party license files unchanged",
+      "commit": "4c5103b",
+      "status": "Previously granted permissions remain valid for that version"
+    }
+  ]
 }
