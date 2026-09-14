@@ -1,10 +1,10 @@
 {
   "project": "OhmyAIMCM",
   "date": "2026-09-13",
-  "readme_sha256": "71c9fb042ab1ce278fe0feb1706f49e66c975164aeed6070832241e344fe7ab4",
+  "readme_sha256": "173507eaee91e2a12bb66fd513bb9a38a6c83124732521c765f003fc37ee2e27",
   "runtime_resources": 265,
   "runtime_modules": 20,
-  "checked_local_links": 20,
+  "checked_local_links": 21,
   "cross_module_links": 48,
   "typesetter_regression_passed": 37,
   "verification": "design-paper/qa.json",
@@ -24,5 +24,11 @@
     "review": "Author self-review against shipped coordinator, evidence-map source, figure contract, typesetter, compute and writing documentation",
     "benchmark_status": "Proposed evaluation only; no new performance experiment",
     "runtime_regressions": "Historical values above retained; not rerun for documentation-only edits"
+  },
+  "license_revision": {
+    "spdx": "Apache-2.0",
+    "source": "https://www.apache.org/licenses/LICENSE-2.0.txt",
+    "sha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30",
+    "scope": "Root license and README notice; existing third-party license files unchanged"
   }
 }
